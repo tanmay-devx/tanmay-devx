@@ -233,19 +233,6 @@ Technologies actively being studied and tested in lab environments:
 
 ---
 
-#### 6. [Terraform Multi-Environment AWS Infrastructure](https://github.com/tanmay9783/terraform-multi-environment)
-*Modular Infrastructure as Code repository provisioning parameterized cloud environments across Dev and Prod.*
-
-- **Problem Addressed:** Manual cloud provisioning produces configuration drift, inconsistent security policies, and deployment errors between development and production environments.
-- **What I Implemented:** Developed modular Terraform configurations that provision EC2 instances, VPC associations, and security groups dynamically across isolated environments.
-- **Architecture & System Design:** Utilizes Terraform Workspaces and environment-specific `.tfvars` files (`terraform.tfvars.dev`, `terraform.tfvars.prod`) to decouple configuration values from infrastructure definitions, querying AWS dynamic data sources (`aws_subnets`, `aws_ami`) to eliminate hardcoded identifiers.
-- **Key Technical Decisions:** Decoupled environment state into dedicated workspace state partitions, substantially mitigating the risk of accidental state collisions or cross-environment resource overwrites during development and production runs.
-- **Current Limitations:** Currently operates within default VPC subnets rather than provisioning custom multi-tier VPC topologies with private subnets, NAT gateways, and public load balancers.
-- **Tech Stack:** `Terraform (HCL)`, `AWS (EC2, VPC, IAM)`, `Linux Shell`
-- **Repository:** [github.com/tanmay9783/terraform-multi-environment](https://github.com/tanmay9783/terraform-multi-environment)
-
----
-
 ### Systems Architecture & Execution Lifecycle
 
 #### Diagram 1: Coditorium Judge Execution Pipeline
