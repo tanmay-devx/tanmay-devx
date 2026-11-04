@@ -260,35 +260,3 @@ A productivity ecosystem combining a web dashboard and native Android applicatio
 </table>
 
 </div>
-
----
-
-## ⚙️ Engineering Deep Dive
-
-I enjoy working beyond the application layer and understanding the underlying execution and communication flows.
-
-### 01. CodVidya — Asynchronous Judge Architecture
-
-The judging pipeline separates API request handling from untrusted code execution.
-
-```mermaid
-flowchart TD
-    A["Student / Contestant"] --> B["React Frontend"]
-    B --> C["NestJS API"]
-    C --> D[("PostgreSQL")]
-    C --> E["RabbitMQ"]
-    E --> F["Execution Worker"]
-    F --> G["Rootless Podman Sandbox"]
-    G --> H["Compile & Execute"]
-    H --> I["Test Case Evaluation"]
-    I --> J["Verdict Generation"]
-    J --> D
-    J --> K["Result Notification"]
-    K --> B
-
-    classDef client fill:#172554,stroke:#3B82F6,color:#fff
-    classDef backend fill:#164E63,stroke:#06B6D4,color:#fff
-    classDef execution fill:#3F2B63,stroke:#A78BFA,color:#fff
-    class A,B client
-    class C,D,E backend
-    class F,G,H,I,J,K execution
