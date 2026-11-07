@@ -48,33 +48,6 @@
 
 ---
 
-## ⚙️ Systems Architecture Spotlight
-
-### CodVidya — Asynchronous Submission & Judging Pipeline
-The end-to-end architecture separating user-facing API ingestion from untrusted code execution:
-
-```mermaid
-flowchart LR
-    UI["React Client"] -->|"POST /submissions"| API["NestJS Gateway"]
-    API -->|"Persist State"| DB[("PostgreSQL")]
-    API -->|"Durable AMQP"| MQ["RabbitMQ Broker"]
-    MQ -->|"Manual Ack"| Worker["Execution Worker"]
-    Worker -->|"Isolated Process"| Sandbox["Rootless Podman<br/>(--network none, cgroups)"]
-    Sandbox -->|"Verdict"| Worker
-    Worker -->|"Update State"| DB
-    DB -.->|"WebSocket"| UI
-
-    classDef default fill:#161B22,stroke:#58A6FF,stroke-width:1.2px,color:#C9D1D9;
-    classDef highlight fill:#1F2937,stroke:#3B82F6,stroke-width:1.5px,color:#fff;
-    class MQ,Sandbox highlight;
-```
-
-- **Zero-Blocking Ingestion:** API offloads compute-heavy compilation to RabbitMQ; requests acknowledge in single-digit milliseconds.
-- **Fault-Tolerant Delivery:** Durable queues (`{ durable: true }`) and persistent messages (`{ persistent: true }`) prevent data loss during worker reboots.
-- **Least-Privilege Containment:** Ephemeral rootless Podman containers prevent host privilege escalation and denial-of-service.
-
----
-
 ## 🚀 Key Engineering Projects
 
 <table>
