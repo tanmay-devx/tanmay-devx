@@ -28,8 +28,8 @@
     <img src="https://img.shields.io/badge/LeetCode-tanmay041-FFA116?style=flat-square&logo=leetcode&logoColor=black" alt="LeetCode"/>
   </a>
   &nbsp;
-  <a href="https://github.com/tanmay9783">
-    <img src="https://img.shields.io/badge/GitHub-tanmay9783-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub"/>
+  <a href="https://github.com/tanmay-devx">
+    <img src="https://img.shields.io/badge/GitHub-tanmay-devx-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub"/>
   </a>
 </p>
 
