@@ -1,64 +1,63 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 590" width="100%" height="100%">
 <defs>
   <style>
-    @import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap");
-    .heading { font-family: "Instrument Serif", "Georgia", serif; font-size: 29px; fill: #F0F6FC; font-weight: 400; letter-spacing: -0.2px; }
-    .flow-tag { font-family: "JetBrains Mono", monospace; font-size: 11px; fill: #58A6FF; font-weight: 500; letter-spacing: 0.5px; }
-    .layer-tag { font-family: "JetBrains Mono", monospace; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; }
-    .tech-stack { font-family: "JetBrains Mono", -apple-system, BlinkMacSystemFont, monospace; font-size: 12.5px; font-weight: 500; }
-    .applied-lbl { font-family: "JetBrains Mono", monospace; font-size: 10px; font-weight: 600; fill: #8B949E; letter-spacing: 1.2px; }
-    .applied-val { font-family: "JetBrains Mono", monospace; font-size: 11.5px; font-weight: 400; }
+    .heading { font-family: Georgia, "Times New Roman", serif; font-size: 29px; fill: #F0F6FC; font-weight: normal; letter-spacing: -0.2px; }
+    .flow-tag { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 11px; fill: #39D353; font-weight: 500; letter-spacing: 0.5px; }
+    .layer-tag { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; }
+    .tech-stack { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 12.5px; font-weight: 500; }
+    .applied-lbl { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 10px; font-weight: 600; fill: #8B949E; letter-spacing: 1.2px; }
+    .applied-val { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 11.5px; font-weight: 400; }
   </style>
-  <filter id="cardGlow" x="-10%" y="-10%" width="120%" height="120%">
-    <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#58A6FF" flood-opacity="0.3" />
+  <filter id="greenCardGlow" x="-10%" y="-10%" width="120%" height="120%">
+    <feDropShadow dx="0" dy="0" stdDeviation="4.5" flood-color="#39D353" flood-opacity="0.35"/>
   </filter>
 </defs>
-<rect width="1040" height="590" fill="#0D1117" rx="12" />
+<rect width="1040" height="590" fill="#0D1117" rx="12"/>
 <text x="40" y="48" class="heading">One engineer, every layer of a distributed system</text>
-<text x="1000" y="46" class="flow-tag" text-anchor="end">↓ request &nbsp;&nbsp;&nbsp; ↑ state</text>
-<line x1="42" y1="120" x2="42" y2="525" stroke="#30363D" stroke-width="1.5" />
-<rect x="38" y="116" width="8" height="8" rx="1" fill="#0D1117" stroke="#30363D" stroke-width="1.5" />
-<rect x="70" y="86" width="930" height="68" rx="6" fill="#161B22" stroke="#30363D" stroke-width="1"  />
-<rect x="82" y="102" width="3" height="36" rx="1.5" fill="#388BFD" />
-<text x="94" y="113" class="layer-tag" fill="#58A6FF">01&nbsp;&nbsp;INTERFACE</text>
+<text x="1000" y="46" class="flow-tag" text-anchor="end">&#x2193; request &#160;&#160;&#160; &#x2191; state</text>
+<line x1="42" y1="120" x2="42" y2="525" stroke="#30363D" stroke-width="1.5"/>
+<rect x="38" y="116" width="8" height="8" rx="1" fill="#0D1117" stroke="#30363D" stroke-width="1.5"/>
+<rect x="70" y="86" width="930" height="68" rx="6" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+<rect x="82" y="102" width="3" height="36" rx="1.5" fill="#26A641"/>
+<text x="94" y="113" class="layer-tag" fill="#39D353">01&#160;&#160;INTERFACE</text>
 <text x="94" y="135" class="tech-stack" fill="#C9D1D9">React · Next.js · TypeScript · Tailwind CSS · React Native</text>
 <text x="630" y="113" class="applied-lbl">APPLIED IN</text>
 <text x="630" y="135" class="applied-val" fill="#8B949E">CodVidya · NijiSamvad · Planrova</text>
-<rect x="38" y="197" width="8" height="8" rx="1" fill="#0D1117" stroke="#30363D" stroke-width="1.5" />
-<rect x="70" y="167" width="930" height="68" rx="6" fill="#161B22" stroke="#30363D" stroke-width="1"  />
-<rect x="82" y="183" width="3" height="36" rx="1.5" fill="#388BFD" />
-<text x="94" y="194" class="layer-tag" fill="#58A6FF">02&nbsp;&nbsp;API</text>
+<rect x="38" y="197" width="8" height="8" rx="1" fill="#0D1117" stroke="#30363D" stroke-width="1.5"/>
+<rect x="70" y="167" width="930" height="68" rx="6" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+<rect x="82" y="183" width="3" height="36" rx="1.5" fill="#26A641"/>
+<text x="94" y="194" class="layer-tag" fill="#39D353">02&#160;&#160;API</text>
 <text x="94" y="216" class="tech-stack" fill="#C9D1D9">Node.js · Express · NestJS · REST APIs · Prisma ORM</text>
 <text x="630" y="194" class="applied-lbl">APPLIED IN</text>
 <text x="630" y="216" class="applied-val" fill="#8B949E">CodVidya · DropX · NijiSamvad</text>
-<circle cx="42" cy="268" r="2" fill="#58A6FF" />
-<rect x="37" y="277" width="10" height="10" rx="1.5" fill="#58A6FF" stroke="#58A6FF" stroke-width="1.5" />
-<circle cx="42" cy="296" r="2" fill="#58A6FF" />
-<line x1="47" y1="282" x2="70" y2="282" stroke="#58A6FF" stroke-width="1.5" />
-<rect x="70" y="248" width="930" height="68" rx="6" fill="#101D2E" stroke="#58A6FF" stroke-width="1.5" filter="url(#cardGlow)" />
-<rect x="82" y="264" width="3" height="36" rx="1.5" fill="#58A6FF" />
-<text x="94" y="275" class="layer-tag" fill="#58A6FF">03&nbsp;&nbsp;ASYNC PROCESSING</text>
+<circle cx="42" cy="268" r="2" fill="#39D353"/>
+<rect x="37" y="277" width="10" height="10" rx="1.5" fill="#39D353" stroke="#39D353" stroke-width="1.5"/>
+<circle cx="42" cy="296" r="2" fill="#39D353"/>
+<line x1="47" y1="282" x2="70" y2="282" stroke="#39D353" stroke-width="1.5"/>
+<rect x="70" y="248" width="930" height="68" rx="6" fill="#0D2218" stroke="#39D353" stroke-width="1.5" filter="url(#greenCardGlow)"/>
+<rect x="82" y="264" width="3" height="36" rx="1.5" fill="#39D353"/>
+<text x="94" y="275" class="layer-tag" fill="#39D353">03&#160;&#160;ASYNC PROCESSING</text>
 <text x="94" y="297" class="tech-stack" fill="#F0F6FC">RabbitMQ · Worker Queues · AMQP · Rootless Podman</text>
 <text x="630" y="275" class="applied-lbl">APPLIED IN</text>
 <text x="630" y="297" class="applied-val" fill="#F0F6FC">CodVidya</text>
-<rect x="38" y="359" width="8" height="8" rx="1" fill="#0D1117" stroke="#30363D" stroke-width="1.5" />
-<rect x="70" y="329" width="930" height="68" rx="6" fill="#161B22" stroke="#30363D" stroke-width="1"  />
-<rect x="82" y="345" width="3" height="36" rx="1.5" fill="#388BFD" />
-<text x="94" y="356" class="layer-tag" fill="#58A6FF">04&nbsp;&nbsp;REAL-TIME & SECURITY</text>
+<rect x="38" y="359" width="8" height="8" rx="1" fill="#0D1117" stroke="#30363D" stroke-width="1.5"/>
+<rect x="70" y="329" width="930" height="68" rx="6" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+<rect x="82" y="345" width="3" height="36" rx="1.5" fill="#26A641"/>
+<text x="94" y="356" class="layer-tag" fill="#39D353">04&#160;&#160;REAL-TIME &amp; SECURITY</text>
 <text x="94" y="378" class="tech-stack" fill="#C9D1D9">Socket.IO · WebRTC · AES-256-GCM · Web Crypto API</text>
 <text x="630" y="356" class="applied-lbl">APPLIED IN</text>
 <text x="630" y="378" class="applied-val" fill="#8B949E">NijiSamvad · DropX</text>
-<rect x="38" y="440" width="8" height="8" rx="1" fill="#0D1117" stroke="#30363D" stroke-width="1.5" />
-<rect x="70" y="410" width="930" height="68" rx="6" fill="#161B22" stroke="#30363D" stroke-width="1"  />
-<rect x="82" y="426" width="3" height="36" rx="1.5" fill="#388BFD" />
-<text x="94" y="437" class="layer-tag" fill="#58A6FF">05&nbsp;&nbsp;DATA & STORAGE</text>
+<rect x="38" y="440" width="8" height="8" rx="1" fill="#0D1117" stroke="#30363D" stroke-width="1.5"/>
+<rect x="70" y="410" width="930" height="68" rx="6" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+<rect x="82" y="426" width="3" height="36" rx="1.5" fill="#26A641"/>
+<text x="94" y="437" class="layer-tag" fill="#39D353">05&#160;&#160;DATA &amp; STORAGE</text>
 <text x="94" y="459" class="tech-stack" fill="#C9D1D9">PostgreSQL · Redis · MongoDB · SQLite · Firebase Firestore</text>
 <text x="630" y="437" class="applied-lbl">APPLIED IN</text>
 <text x="630" y="459" class="applied-val" fill="#8B949E">CodVidya · DropX · Planrova · Sanjeevni AI</text>
-<rect x="38" y="521" width="8" height="8" rx="1" fill="#0D1117" stroke="#30363D" stroke-width="1.5" />
-<rect x="70" y="491" width="930" height="68" rx="6" fill="#161B22" stroke="#30363D" stroke-width="1"  />
-<rect x="82" y="507" width="3" height="36" rx="1.5" fill="#388BFD" />
-<text x="94" y="518" class="layer-tag" fill="#58A6FF">06&nbsp;&nbsp;CLOUD & AI</text>
+<rect x="38" y="521" width="8" height="8" rx="1" fill="#0D1117" stroke="#30363D" stroke-width="1.5"/>
+<rect x="70" y="491" width="930" height="68" rx="6" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+<rect x="82" y="507" width="3" height="36" rx="1.5" fill="#26A641"/>
+<text x="94" y="518" class="layer-tag" fill="#39D353">06&#160;&#160;CLOUD &amp; AI</text>
 <text x="94" y="540" class="tech-stack" fill="#C9D1D9">AWS · Docker · Terraform · Linux · Groq Vision · Three.js</text>
 <text x="630" y="518" class="applied-lbl">APPLIED IN</text>
 <text x="630" y="540" class="applied-val" fill="#8B949E">Planrova · Sanjeevni AI · Infrastructure projects</text>
