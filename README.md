@@ -260,7 +260,7 @@ Demonstrated proficiency in large language model architectures and cloud-hosted 
 </table>
 
 <div style="margin-top: 25px;">
-  <img src="./assets/activity.png" width="100%" alt="GitHub 3D Contribution Activity"/>
+  <img src="./assets/activity.svg" width="100%" alt="GitHub 3D Contribution Activity"/>
 </div>
 
 </div>
