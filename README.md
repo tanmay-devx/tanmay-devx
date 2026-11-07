@@ -6,42 +6,34 @@
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&height=230&text=Tanmay%20Agrawal&fontSize=50&fontColor=58A6FF&stroke=58A6FF&strokeWidth=1&animation=fadeIn&desc=Backend%20Engineering%20%7C%20Distributed%20Systems%20%7C%20Cloud%20Infrastructure&descSize=16&descAlignY=68&color=0:0D1117,100:161B22" width="100%" alt="Tanmay Agrawal Header Banner"/>
+<img src="https://capsule-render.vercel.app/api?type=venom&height=200&text=Tanmay%20Agrawal&fontSize=48&fontColor=58A6FF&stroke=58A6FF&strokeWidth=1&animation=fadeIn&desc=Backend%20Systems%20%7C%20Distributed%20Architecture%20%7C%20Cloud%20Infrastructure&descSize=15&descAlignY=68&color=0:0D1117,100:161B22" width="100%" alt="Tanmay Agrawal Banner"/>
 
 ### Backend & Systems Engineer
 *Designing resilient backend architectures, asynchronous processing pipelines, and distributed systems.*
 
 <p align="center">
   <a href="https://tanmaydevs.vercel.app" target="_blank">
-    <img src="https://img.shields.io/badge/Portfolio-tanmaydevs.vercel.app-58A6FF?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio"/>
+    <img src="https://img.shields.io/badge/Portfolio-tanmaydevs.vercel.app-58A6FF?style=flat-square&logo=vercel&logoColor=white" alt="Portfolio"/>
   </a>
   &nbsp;
   <a href="https://www.linkedin.com/in/tanmay041/" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-tanmay041-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+    <img src="https://img.shields.io/badge/LinkedIn-tanmay041-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"/>
   </a>
   &nbsp;
   <a href="mailto:tanmayag041@gmail.com">
-    <img src="https://img.shields.io/badge/Email-tanmayag041%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/>
+    <img src="https://img.shields.io/badge/Email-tanmayag041%40gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white" alt="Email"/>
   </a>
   &nbsp;
   <a href="https://leetcode.com/u/tanmay041/" target="_blank">
-    <img src="https://img.shields.io/badge/LeetCode-tanmay041-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode"/>
+    <img src="https://img.shields.io/badge/LeetCode-tanmay041-FFA116?style=flat-square&logo=leetcode&logoColor=black" alt="LeetCode"/>
   </a>
   &nbsp;
   <a href="https://github.com/tanmay9783">
-    <img src="https://img.shields.io/badge/GitHub-tanmay9783-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
+    <img src="https://img.shields.io/badge/GitHub-tanmay9783-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub"/>
   </a>
 </p>
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=16&duration=2800&pause=1100&color=58A6FF&center=true&vCenter=true&width=750&lines=Building+asynchronous+execution+pipelines+with+RabbitMQ.;Sandboxing+untrusted+code+with+Rootless+Podman+%26+cgroups.;Architecting+fault-tolerant%2C+event-driven+backend+services.;AWS+Certified+Cloud+Practitioner+%26+AI+Practitioner." alt="Typing Animation"/>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Status-Active_Building-238636?style=flat-square&logo=githubactions&logoColor=white" alt="Status"/>
-  &nbsp;
-  <img src="https://img.shields.io/badge/Focus-Distributed_Systems-58A6FF?style=flat-square&logo=apachekafka&logoColor=white" alt="Focus"/>
-  &nbsp;
-  <img src="https://img.shields.io/badge/Architecture-Event--Driven-8957E5?style=flat-square&logo=rabbitmq&logoColor=white" alt="Architecture"/>
-</p>
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=15&duration=2800&pause=1000&color=58A6FF&center=true&vCenter=true&width=700&lines=Building+asynchronous+execution+pipelines+with+RabbitMQ.;Sandboxing+untrusted+code+with+Rootless+Podman.;Architecting+defensive%2C+fault-tolerant+backend+services.;AWS+Certified+Cloud+Practitioner+%26+AI+Practitioner." alt="Typing SVG"/>
 
 </div>
 
@@ -56,9 +48,36 @@
 
 ---
 
+## ⚙️ Systems Architecture Spotlight
+
+### CodVidya — Asynchronous Submission & Judging Pipeline
+The end-to-end architecture separating user-facing API ingestion from untrusted code execution:
+
+```mermaid
+flowchart LR
+    UI["React Client"] -->|"POST /submissions"| API["NestJS Gateway"]
+    API -->|"Persist State"| DB[("PostgreSQL")]
+    API -->|"Durable AMQP"| MQ["RabbitMQ Broker"]
+    MQ -->|"Manual Ack"| Worker["Execution Worker"]
+    Worker -->|"Isolated Process"| Sandbox["Rootless Podman<br/>(--network none, cgroups)"]
+    Sandbox -->|"Verdict"| Worker
+    Worker -->|"Update State"| DB
+    DB -.->|"WebSocket"| UI
+
+    classDef default fill:#161B22,stroke:#58A6FF,stroke-width:1.2px,color:#C9D1D9;
+    classDef highlight fill:#1F2937,stroke:#3B82F6,stroke-width:1.5px,color:#fff;
+    class MQ,Sandbox highlight;
+```
+
+- **Zero-Blocking Ingestion:** API offloads compute-heavy compilation to RabbitMQ; requests acknowledge in single-digit milliseconds.
+- **Fault-Tolerant Delivery:** Durable queues (`{ durable: true }`) and persistent messages (`{ persistent: true }`) prevent data loss during worker reboots.
+- **Least-Privilege Containment:** Ephemeral rootless Podman containers prevent host privilege escalation and denial-of-service.
+
+---
+
 ## 🚀 Key Engineering Projects
 
-<table width="100%">
+<table>
 <tr>
 <td width="50%" valign="top">
 
@@ -71,12 +90,6 @@
 
 `NestJS` `TypeScript` `RabbitMQ` `Podman` `PostgreSQL` `Prisma`
 
-<p>
-  <a href="https://github.com/tanmay9783/Coditorium">
-    <img src="https://img.shields.io/badge/View_Repository-181717?style=flat-square&logo=github&logoColor=white" alt="View Repository"/>
-  </a>
-</p>
-
 </td>
 <td width="50%" valign="top">
 
@@ -88,12 +101,6 @@
 - Direct peer-to-peer audio/video streaming over WebRTC mesh.
 
 `React` `Node.js` `Socket.IO` `WebRTC` `Web Crypto API`
-
-<p>
-  <a href="https://github.com/tanmay9783/NijiSamvad">
-    <img src="https://img.shields.io/badge/View_Repository-181717?style=flat-square&logo=github&logoColor=white" alt="View Repository"/>
-  </a>
-</p>
 
 </td>
 </tr>
@@ -109,12 +116,6 @@
 
 `Node.js` `Express.js` `Redis` `Socket.IO` `React`
 
-<p>
-  <a href="https://github.com/tanmay9783/dropx">
-    <img src="https://img.shields.io/badge/View_Repository-181717?style=flat-square&logo=github&logoColor=white" alt="View Repository"/>
-  </a>
-</p>
-
 </td>
 <td width="50%" valign="top">
 
@@ -126,12 +127,6 @@
 - Multimodal Groq Vision OCR pipeline for study note digitization.
 
 `React Native` `Expo` `Kotlin` `Firestore` `Groq API`
-
-<p>
-  <a href="https://github.com/tanmay9783/planrova">
-    <img src="https://img.shields.io/badge/View_Repository-181717?style=flat-square&logo=github&logoColor=white" alt="View Repository"/>
-  </a>
-</p>
 
 </td>
 </tr>
@@ -146,12 +141,6 @@
 - Multilingual speech recognition (Hindi / Hinglish / English) with Groq LLaMA clinical summaries.
 
 `React 18` `Three.js` `Node.js` `SQLite` `Groq LLaMA`
-
-<p>
-  <a href="https://github.com/tanmay9783/Sanjeevni-AI">
-    <img src="https://img.shields.io/badge/View_Repository-181717?style=flat-square&logo=github&logoColor=white" alt="View Repository"/>
-  </a>
-</p>
 
 </td>
 </tr>
@@ -258,19 +247,19 @@ Demonstrated proficiency in large language model architectures and cloud-hosted 
 
 <p align="center">
   <a href="https://leetcode.com/u/tanmay041/" target="_blank">
-    <img src="https://img.shields.io/badge/LeetCode-tanmay041-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode"/>
+    <img src="https://img.shields.io/badge/LeetCode-tanmay041-FFA116?style=flat-square&logo=leetcode&logoColor=black" alt="LeetCode"/>
   </a>
   &nbsp;
   <a href="https://codeforces.com/profile/tanmay0412" target="_blank">
-    <img src="https://img.shields.io/badge/Codeforces-tanmay0412-1F8ACB?style=for-the-badge&logo=codeforces&logoColor=white" alt="Codeforces"/>
+    <img src="https://img.shields.io/badge/Codeforces-tanmay0412-1F8ACB?style=flat-square&logo=codeforces&logoColor=white" alt="Codeforces"/>
   </a>
   &nbsp;
   <a href="https://www.codechef.com/users/tanmay041" target="_blank">
-    <img src="https://img.shields.io/badge/CodeChef-tanmay041-5B4638?style=for-the-badge&logo=codechef&logoColor=white" alt="CodeChef"/>
+    <img src="https://img.shields.io/badge/CodeChef-tanmay041-5B4638?style=flat-square&logo=codechef&logoColor=white" alt="CodeChef"/>
   </a>
   &nbsp;
   <a href="https://www.hackerrank.com/tanmay041" target="_blank">
-    <img src="https://img.shields.io/badge/HackerRank-tanmay041-2EC866?style=for-the-badge&logo=hackerrank&logoColor=white" alt="HackerRank"/>
+    <img src="https://img.shields.io/badge/HackerRank-tanmay041-2EC866?style=flat-square&logo=hackerrank&logoColor=white" alt="HackerRank"/>
   </a>
 </p>
 
@@ -299,8 +288,7 @@ Demonstrated proficiency in large language model architectures and cloud-hosted 
 
 </div>
 
-<!-- Animated Wave Transition to Footer -->
-<img src="https://capsule-render.vercel.app/api?type=waving&height=100&color=0:0D1117,100:161B22&section=footer" width="100%" alt="Wave Transition"/>
+---
 
 <div align="center">
 
