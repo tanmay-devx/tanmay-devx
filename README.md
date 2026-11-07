@@ -259,6 +259,14 @@ Demonstrated proficiency in large language model architectures and cloud-hosted 
 </tr>
 </table>
 
+<div style="margin-top: 25px;">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./profile-3d-contrib/profile-night-green.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./profile-3d-contrib/profile-green-animate.svg">
+    <img src="./profile-3d-contrib/profile-night-green.svg" width="100%" alt="3D Contribution Activity"/>
+  </picture>
+</div>
+
 </div>
 
 ---
