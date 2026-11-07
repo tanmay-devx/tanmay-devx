@@ -167,50 +167,11 @@ Demonstrated proficiency in large language model architectures and cloud-hosted 
 
 ---
 
-## 🛠️ Technical Competencies
+## 🛠️ One Engineer, Every Layer of a Distributed System
 
-<table>
-<tr>
-  <td width="22%"><strong>Languages</strong></td>
-  <td>
-    <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=ts,js,java,py,postgres,c,cpp&theme=dark" alt="Languages"/></a>
-    <br/>
-    <sub>TypeScript &bull; JavaScript (ES6+) &bull; Java &bull; Python &bull; SQL &bull; C &bull; C++</sub>
-  </td>
-</tr>
-<tr>
-  <td><strong>Backend & Queues</strong></td>
-  <td>
-    <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=nodejs,express,nestjs,rabbitmq,postman&theme=dark" alt="Backend"/></a>
-    <br/>
-    <sub>Node.js &bull; Express.js &bull; NestJS &bull; RabbitMQ (AMQP) &bull; Socket.IO &bull; WebRTC &bull; REST APIs</sub>
-  </td>
-</tr>
-<tr>
-  <td><strong>Databases & Storage</strong></td>
-  <td>
-    <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=postgres,redis,mongodb,sqlite,prisma&theme=dark" alt="Databases"/></a>
-    <br/>
-    <sub>PostgreSQL &bull; Redis / Valkey &bull; MongoDB &bull; SQLite (better-sqlite3) &bull; Prisma ORM</sub>
-  </td>
-</tr>
-<tr>
-  <td><strong>Cloud & DevOps</strong></td>
-  <td>
-    <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=aws,docker,terraform,linux,git,githubactions&theme=dark" alt="DevOps"/></a>
-    <br/>
-    <sub>AWS (EC2, S3, IAM, VPC) &bull; Docker &bull; Rootless Podman &bull; Terraform &bull; Linux &bull; GitHub Actions &bull; Git</sub>
-  </td>
-</tr>
-<tr>
-  <td><strong>Frontend & Mobile</strong></td>
-  <td>
-    <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=react,nextjs,tailwind,vite,kotlin&theme=dark" alt="Frontend"/></a>
-    <br/>
-    <sub>React &bull; Next.js &bull; React Native (Expo) &bull; Tailwind CSS &bull; Vite &bull; Three.js &bull; Kotlin</sub>
-  </td>
-</tr>
-</table>
+<div align="center">
+  <img src="./assets/distributed-system-layers.svg" width="100%" alt="One engineer, every layer of a distributed system"/>
+</div>
 
 ---
 
