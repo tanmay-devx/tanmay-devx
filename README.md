@@ -16,7 +16,7 @@
     <img src="https://img.shields.io/badge/Portfolio-tanmaydevs.vercel.app-58A6FF?style=flat-square&logo=vercel&logoColor=white" alt="Portfolio"/>
   </a>
   &nbsp;
-  <a href="https://www.linkedin.com/in/tanmay041/" target="_blank">
+  <a href="https://www.linkedin.com/in/tanmaydevx/" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-tanmay041-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"/>
   </a>
   &nbsp;
