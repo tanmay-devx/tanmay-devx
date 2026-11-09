@@ -20,7 +20,7 @@
     <img src="https://img.shields.io/badge/LinkedIn-tanmay041-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"/>
   </a>
   &nbsp;
-  <a href="mailto:tanmayag041@gmail.com">
+  <a href="mailto:tanmayagrawal.dev@gmail.com">
     <img src="https://img.shields.io/badge/Email-tanmayag041%40gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white" alt="Email"/>
   </a>
   &nbsp;
