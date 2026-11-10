@@ -21,7 +21,7 @@
   </a>
   &nbsp;
   <a href="mailto:tanmayagrawal.dev@gmail.com">
-    <img src="https://img.shields.io/badge/Email-tanmayag041%40gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white" alt="Email"/>
+    <img src="https://img.shields.io/badge/Email-tanmayagrawal.dev%40gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white" alt="Email"/>
   </a>
   &nbsp;
   <a href="https://leetcode.com/u/tanmay041/" target="_blank">
