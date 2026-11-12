@@ -1,6 +1,7 @@
 <!-- =========================================================
      TANMAY AGRAWAL | GITHUB PROFILE README
-     Backend Systems & Distributed Architecture
+     Software Engineer | Backend · Full-Stack · Cloud
+     Developer Brand: TanmayDevX
      Repository: tanmay-devx/tanmay-devx
 ========================================================== -->
 
@@ -8,16 +9,16 @@
 
 <img src="https://capsule-render.vercel.app/api?type=venom&height=200&text=Tanmay%20Agrawal&fontSize=48&fontColor=58A6FF&stroke=58A6FF&strokeWidth=1&animation=fadeIn&desc=Backend%20Systems%20%7C%20Distributed%20Architecture%20%7C%20Cloud%20Infrastructure&descSize=15&descAlignY=68&color=0:0D1117,100:161B22" width="100%" alt="Tanmay Agrawal Banner"/>
 
-### Backend & Systems Engineer
-*Designing resilient backend architectures, asynchronous processing pipelines, and distributed systems.*
+### Software Engineer | Backend · Full-Stack · Cloud
+*Engineering scalable backend systems, distributed architectures, and reliable software products.*
 
 <p align="center">
-  <a href="https://tanmaydevs.vercel.app" target="_blank">
-    <img src="https://img.shields.io/badge/Portfolio-tanmaydevs.vercel.app-58A6FF?style=flat-square&logo=vercel&logoColor=white" alt="Portfolio"/>
+  <a href="https://tanmaydev.in" target="_blank">
+    <img src="https://img.shields.io/badge/Portfolio-tanmaydev.in-58A6FF?style=flat-square&logo=vercel&logoColor=white" alt="Portfolio"/>
   </a>
   &nbsp;
-  <a href="https://www.linkedin.com/in/tanmaydevx/" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-tanmaydevx-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+  <a href="https://www.linkedin.com/in/tanmayagrawaldev" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-tanmayagrawaldev-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"/>
   </a>
   &nbsp;
   <a href="mailto:tanmayagrawal.dev@gmail.com">
@@ -33,7 +34,7 @@
   </a>
 </p>
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=15&duration=2800&pause=1000&color=58A6FF&center=true&vCenter=true&width=700&lines=Building+asynchronous+execution+pipelines+with+RabbitMQ.;Sandboxing+untrusted+code+with+Rootless+Podman.;Architecting+defensive%2C+fault-tolerant+backend+services.;AWS+Certified+Cloud+Practitioner+%26+AI+Practitioner." alt="Typing SVG"/>
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=15&duration=2800&pause=1000&color=58A6FF&center=true&vCenter=true&width=700&lines=Building+asynchronous+execution+pipelines+with+RabbitMQ.;Sandboxing+untrusted+code+with+Rootless+Podman.;Architecting+defensive%2C+fault-tolerant+backend+services.;Building+cloud-native+applications+with+AWS+and+Terraform." alt="Typing SVG"/>
 
 </div>
 
@@ -231,8 +232,8 @@ Demonstrated proficiency in large language model architectures and cloud-hosted 
 <div align="center">
 
 <p align="center">
-  <a href="https://tanmaydevs.vercel.app"><b>Portfolio Website</b></a> &bull;
-  <a href="https://www.linkedin.com/in/tanmaydevx/"><b>LinkedIn</b></a> &bull;
+  <a href="https://tanmaydev.in"><b>Portfolio</b></a> &bull;
+  <a href="https://www.linkedin.com/in/tanmayagrawaldev"><b>LinkedIn</b></a> &bull;
   <a href="mailto:tanmayagrawal.dev@gmail.com"><b>tanmayagrawal.dev@gmail.com</b></a> &bull;
   <a href="https://github.com/tanmay-devx"><b>GitHub</b></a>
 </p>
