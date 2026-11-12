@@ -12,7 +12,7 @@
 <text x="480" y="18" class="st-sync" text-anchor="end">SYNCED 12 NOV 2026</text>
 <line x1="165" y1="30" x2="165" y2="165" stroke="#21262D" stroke-width="1"/>
 <line x1="330" y1="30" x2="330" y2="165" stroke="#21262D" stroke-width="1"/>
-<text x="82.5" y="88" class="st-big" text-anchor="middle">889</text>
+<text x="82.5" y="88" class="st-big" text-anchor="middle">890</text>
 <text x="82.5" y="122" class="st-lbl" text-anchor="middle">Total Contributions</text>
 <text x="82.5" y="145" class="st-sub" text-anchor="middle">Aug 12, 2024 - Present</text>
 <circle cx="247.5" cy="74" r="37" fill="none" stroke="#58A6FF" stroke-width="5"/>
