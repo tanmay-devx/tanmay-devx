@@ -110,9 +110,15 @@ def fetch_via_graphql(username: str, token: str) -> tuple[list[list[dict]], int]
     return weeks, int(calendar["totalContributions"])
 
 
-def fetch_via_public_html(username: str) -> tuple[list[list[dict]], int]:
+def fetch_via_public_html(
+    username: str,
+    from_date: str | None = None,
+    to_date: str | None = None,
+) -> tuple[list[list[dict]], int]:
     """Fallback parser for GitHub's public contributions calendar HTML."""
     url = f"https://github.com/users/{username}/contributions"
+    if from_date and to_date:
+        url = f"{url}?from={from_date}&to={to_date}"
     req = urllib.request.Request(
         url,
         headers={"User-Agent": "Mozilla/5.0 (compatible; activity-sync/1.0)"},
@@ -172,7 +178,9 @@ def fetch_via_public_html(username: str) -> tuple[list[list[dict]], int]:
         col_days = [d for _, d in sorted(weeks_dict[col_idx], key=lambda item: item[0])]
         weeks.append(col_days)
 
-    total_match = re.search(r"([\d,]+)\s+contributions?\s+in\s+the\s+last\s+year", body)
+    total_match = re.search(
+        r"([\d,]+)\s+contributions?\s+in\s+(?:the\s+last\s+year|\d{4})", body
+    )
     day_sum = sum(d["count"] for w in weeks for d in w)
     total = int(total_match.group(1).replace(",", "")) if total_match else day_sum
     return weeks, max(total, day_sum)

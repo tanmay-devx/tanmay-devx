@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 495 195" width="100%" height="100%">
+<defs>
+  <style>
+    .st-big { font-family: "Segoe UI", Ubuntu, -apple-system, sans-serif; font-size: 28px; font-weight: 700; fill: #58A6FF; }
+    .st-curr { font-family: "Segoe UI", Ubuntu, -apple-system, sans-serif; font-size: 28px; font-weight: 700; fill: #F0F6FC; }
+    .st-lbl { font-family: "Segoe UI", Ubuntu, -apple-system, sans-serif; font-size: 13.5px; font-weight: 600; fill: #58A6FF; }
+    .st-sub { font-family: "Segoe UI", Ubuntu, -apple-system, sans-serif; font-size: 11.5px; font-weight: 500; fill: #3FB950; }
+    .st-sync { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 9px; fill: #6E7681; }
+  </style>
+</defs>
+<rect width="495" height="195" rx="8" fill="#0D1117" stroke="#30363D" stroke-width="1"/>
+<text x="480" y="18" class="st-sync" text-anchor="end">SYNCED 12 NOV 2026</text>
+<line x1="165" y1="30" x2="165" y2="165" stroke="#21262D" stroke-width="1"/>
+<line x1="330" y1="30" x2="330" y2="165" stroke="#21262D" stroke-width="1"/>
+<text x="82.5" y="88" class="st-big" text-anchor="middle">889</text>
+<text x="82.5" y="122" class="st-lbl" text-anchor="middle">Total Contributions</text>
+<text x="82.5" y="145" class="st-sub" text-anchor="middle">Aug 12, 2024 - Present</text>
+<circle cx="247.5" cy="74" r="37" fill="none" stroke="#58A6FF" stroke-width="5"/>
+<circle cx="247.5" cy="36" r="11" fill="#0D1117"/>
+<path d="M247.5 26 C249.5 30 253 32.5 253 36.5 C253 39.8 250.5 42.2 247.5 42.2 C244.5 42.2 242 39.8 242 36.5 C242 34.2 243.3 32 244.8 30.8 C244.6 32.5 245.5 33.4 246.3 33.4 C247.2 33.4 247.5 31.8 247.5 26 Z" fill="#FF9900"/>
+<text x="247.5" y="84" class="st-curr" text-anchor="middle">23</text>
+<text x="247.5" y="135" class="st-lbl" text-anchor="middle">Current Streak</text>
+<text x="247.5" y="157" class="st-sub" text-anchor="middle">Oct 21 - Nov 12</text>
+<text x="412.5" y="88" class="st-big" text-anchor="middle">23</text>
+<text x="412.5" y="122" class="st-lbl" text-anchor="middle">Longest Streak</text>
+<text x="412.5" y="145" class="st-sub" text-anchor="middle">Oct 21 - Nov 12</text>
+</svg>

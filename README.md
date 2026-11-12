@@ -202,21 +202,25 @@ Demonstrated proficiency in large language model architectures and cloud-hosted 
 <tr>
   <td width="50%" align="center">
     <a href="https://leetcode.com/u/tanmay041/">
-      <img src="https://leetcard.jacoblin.cool/tanmay041?theme=dark" width="100%" alt="LeetCode Stats"/>
+      <img src="./assets/card-leetcode.svg" width="100%" alt="LeetCode Stats"/>
     </a>
   </td>
   <td width="50%" align="center">
     <a href="https://codeforces.com/profile/tanmay0412">
-      <img src="https://codeforces-readme-stats.vercel.app/api/card?username=tanmay0412&theme=tokyonight" width="100%" alt="Codeforces Stats"/>
+      <img src="./assets/card-codeforces.svg" width="100%" alt="Codeforces Stats"/>
     </a>
   </td>
 </tr>
 <tr>
   <td width="50%" align="center">
-    <img src="https://streak-stats.demolab.com/?user=tanmay-devx&theme=tokyonight&hide_border=true&background=0D1117&ring=58A6FF&fire=FF9900&currStreakLabel=58A6FF" width="100%" alt="GitHub Streak"/>
+    <a href="https://github.com/tanmay-devx">
+      <img src="./assets/card-streak.svg" width="100%" alt="GitHub Streak"/>
+    </a>
   </td>
   <td width="50%" align="center">
-    <img src="https://github-readme-stats-eight-theta.vercel.app/api?username=tanmay-devx&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58A6FF&icon_color=58A6FF&text_color=C9D1D9" width="100%" alt="GitHub Stats"/>
+    <a href="https://github.com/tanmay-devx">
+      <img src="./assets/card-github.svg" width="100%" alt="GitHub Stats"/>
+    </a>
   </td>
 </tr>
 </table>

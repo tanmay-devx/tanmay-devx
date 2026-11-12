@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 495 240" width="100%" height="100%">
+<defs>
+  <style>
+    .cf-handle { font-family: "Segoe UI", Ubuntu, -apple-system, sans-serif; font-size: 20px; font-weight: 700; fill: #58A6FF; }
+    .cf-sub { font-family: "Segoe UI", Ubuntu, -apple-system, sans-serif; font-size: 13px; font-weight: 600; fill: #8B949E; }
+    .cf-lbl { font-family: "Segoe UI", Ubuntu, -apple-system, sans-serif; font-size: 13.5px; font-weight: 600; fill: #3FB950; }
+    .cf-val { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13.5px; font-weight: 700; fill: #56D364; }
+    .cf-sync { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 9.5px; fill: #6E7681; }
+  </style>
+</defs>
+<rect width="495" height="240" rx="8" fill="#0D1117" stroke="#30363D" stroke-width="1"/>
+<rect x="24" y="25" width="4" height="11" rx="1" fill="#F2C94C"/>
+<rect x="30" y="19" width="4" height="17" rx="1" fill="#2F80ED"/>
+<rect x="36" y="27" width="4" height="9" rx="1" fill="#EB5757"/>
+<text x="50" y="34" class="cf-handle">tanmay0412</text>
+<text x="468" y="31" class="cf-sync" text-anchor="end">SYNCED 12 NOV 2026</text>
+<text x="24" y="58" class="cf-sub">Unrated (max: Unrated)</text>
+<line x1="24" y1="68" x2="471" y2="68" stroke="#21262D" stroke-width="1"/>
+<circle cx="28" cy="88" r="3.5" fill="#A371F7"/><text x="42" y="92" class="cf-lbl">Contest Rating:</text><text x="468" y="92" class="cf-val" text-anchor="end">0</text>
+<circle cx="28" cy="109" r="3.5" fill="#A371F7"/><text x="42" y="113" class="cf-lbl">Max Contest Rating:</text><text x="468" y="113" class="cf-val" text-anchor="end">0</text>
+<circle cx="28" cy="130" r="3.5" fill="#58A6FF"/><text x="42" y="134" class="cf-lbl">Rated Contests:</text><text x="468" y="134" class="cf-val" text-anchor="end">0</text>
+<circle cx="28" cy="151" r="3.5" fill="#39D353"/><text x="42" y="155" class="cf-lbl">Problems Solved:</text><text x="468" y="155" class="cf-val" text-anchor="end">2</text>
+<circle cx="28" cy="172" r="3.5" fill="#79C0FF"/><text x="42" y="176" class="cf-lbl">Submissions:</text><text x="468" y="176" class="cf-val" text-anchor="end">4</text>
+<circle cx="28" cy="193" r="3.5" fill="#39D353"/><text x="42" y="197" class="cf-lbl">Friend of:</text><text x="468" y="197" class="cf-val" text-anchor="end">0</text>
+<circle cx="28" cy="214" r="3.5" fill="#D2A8FF"/><text x="42" y="218" class="cf-lbl">Contribution:</text><text x="468" y="218" class="cf-val" text-anchor="end">0</text>
+</svg>

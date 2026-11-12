@@ -1,15 +1,15 @@
-name: Sync GitHub 3D Activity
+name: Sync GitHub 3D Activity & Profile Stats
 
 on:
   schedule:
-    # Sync every 6 hours automatically
-    - cron: "0 */6 * * *"
+    # Sync every hour automatically
+    - cron: "0 * * * *"
   workflow_dispatch:
   push:
     branches:
       - main
     paths:
-      - "scripts/generate_activity.py"
+      - "scripts/**"
       - ".github/workflows/update-activity.yml"
 
 permissions:
@@ -29,22 +29,27 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Generate live 3D activity SVG
+      - name: Generate live 3D activity and stats SVGs
         env:
           GH_STATS_TOKEN: ${{ secrets.GH_STATS_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_USERNAME: tanmay-devx
+          LEETCODE_USERNAME: tanmay041
+          CODEFORCES_USERNAME: tanmay0412
           ACTIVITY_SVG_PATH: assets/activity.svg
-        run: python3 scripts/generate_activity.py
+          ASSETS_DIR: assets
+        run: |
+          python3 scripts/generate_activity.py
+          python3 scripts/sync_stats_cards.py
 
-      - name: Commit updated activity.svg if changed
+      - name: Commit updated SVG assets if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/activity.svg
+          git add assets/activity.svg assets/card-leetcode.svg assets/card-codeforces.svg assets/card-streak.svg assets/card-github.svg
           if git diff --cached --quiet; then
-            echo "No changes to assets/activity.svg."
+            echo "No changes to SVG assets."
           else
-            git commit -m "chore: sync 3D GitHub activity graph [skip ci]"
+            git commit -m "chore: sync live GitHub, LeetCode & Codeforces stats [skip ci]"
             git push
           fi
