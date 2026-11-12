@@ -7,14 +7,13 @@
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=venom&height=200&text=Tanmay%20Agrawal&fontSize=48&fontColor=58A6FF&stroke=58A6FF&strokeWidth=1&animation=fadeIn&desc=Backend%20Systems%20%7C%20Distributed%20Architecture%20%7C%20Cloud%20Infrastructure&descSize=15&descAlignY=68&color=0:0D1117,100:161B22" width="100%" alt="Tanmay Agrawal Banner"/>
+<img src="https://capsule-render.vercel.app/api?type=venom&height=165&text=Tanmay%20Agrawal&fontSize=46&fontColor=39D353&stroke=39D353&strokeWidth=1&animation=fadeIn&desc=Software%20Engineer%20%7C%20Backend%20%C2%B7%20Full-Stack%20%C2%B7%20Cloud&descSize=15&descAlignY=68&color=0:0D1117,100:161B22" width="100%" alt="Tanmay Agrawal Banner"/>
 
-### Software Engineer | Backend · Full-Stack · Cloud
 *Engineering scalable backend systems, distributed architectures, and reliable software products.*
 
 <p align="center">
   <a href="https://tanmaydev.in" target="_blank">
-    <img src="https://img.shields.io/badge/Portfolio-tanmaydev.in-58A6FF?style=flat-square&logo=vercel&logoColor=white" alt="Portfolio"/>
+    <img src="https://img.shields.io/badge/Portfolio-tanmaydev.in-238636?style=flat-square&logo=vercel&logoColor=white" alt="Portfolio"/>
   </a>
   &nbsp;
   <a href="https://www.linkedin.com/in/tanmayagrawaldev" target="_blank">
@@ -25,16 +24,12 @@
     <img src="https://img.shields.io/badge/Email-tanmayagrawal.dev%40gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white" alt="Email"/>
   </a>
   &nbsp;
-  <a href="https://leetcode.com/u/tanmay041/" target="_blank">
-    <img src="https://img.shields.io/badge/LeetCode-tanmay041-FFA116?style=flat-square&logo=leetcode&logoColor=black" alt="LeetCode"/>
-  </a>
-  &nbsp;
-  <a href="https://github.com/tanmay-devx">
+  <a href="https://github.com/tanmay-devx" target="_blank">
     <img src="https://img.shields.io/badge/GitHub-tanmay--devx-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub"/>
   </a>
 </p>
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=15&duration=2800&pause=1000&color=58A6FF&center=true&vCenter=true&width=700&lines=Building+asynchronous+execution+pipelines+with+RabbitMQ.;Sandboxing+untrusted+code+with+Rootless+Podman.;Architecting+defensive%2C+fault-tolerant+backend+services.;Building+cloud-native+applications+with+AWS+and+Terraform." alt="Typing SVG"/>
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=15&duration=2800&pause=1000&color=39D353&center=true&vCenter=true&width=700&lines=Building+asynchronous+execution+pipelines+with+RabbitMQ.;Sandboxing+untrusted+code+with+Rootless+Podman.;Architecting+defensive%2C+fault-tolerant+backend+services.;Building+cloud-native+applications+with+AWS+and+Terraform." alt="Typing SVG"/>
 
 </div>
 
@@ -87,8 +82,8 @@ Reproducible AWS infrastructure (`EC2`, `S3`, `IAM`, `VPC`) provisioned declarat
 <tr>
 <td width="50%" valign="top">
 
-### 01. [CodVidya — Distributed Code Judge](https://github.com/tanmay-devx/Coditorium)
-*Asynchronous execution engine and isolated evaluation platform.*
+### 01. CodVidya — Distributed Code Judge
+*1st Place, Innotech Hackathon (400+ participants) · Asynchronous execution engine & isolated judge.*
 
 - **Async Judge Pipeline:** Concurrent student submissions decoupled via RabbitMQ with manual consumer ACKs.
 - **Rootless Isolation:** Untrusted code compiled and graded inside rootless Podman containers with strict resource caps.
@@ -97,9 +92,7 @@ Reproducible AWS infrastructure (`EC2`, `S3`, `IAM`, `VPC`) provisioned declarat
 `NestJS` `TypeScript` `RabbitMQ` `Podman` `PostgreSQL` `Prisma`
 
 <p>
-  <a href="https://github.com/tanmay-devx/Coditorium" target="_blank">
-    <img src="https://img.shields.io/badge/GitHub_Repo-181717?style=flat-square&logo=github&logoColor=white" alt="CodVidya GitHub Repo"/>
-  </a>
+  <img src="https://img.shields.io/badge/Source-Private_Team_Repo-30363D?style=flat-square&logo=github&logoColor=white" alt="CodVidya Private Team Repo"/>
 </p>
 
 </td>
@@ -274,8 +267,8 @@ Reproducible AWS infrastructure (`EC2`, `S3`, `IAM`, `VPC`) provisioned declarat
     </a>
   </td>
   <td width="50%" align="center">
-    <a href="https://codeforces.com/profile/tanmay0412">
-      <img src="https://raw.githubusercontent.com/tanmay-devx/tanmay-devx/stats-output/assets/card-codeforces.svg" width="100%" alt="Codeforces Stats"/>
+    <a href="https://github.com/tanmay-devx?tab=repositories">
+      <img src="https://raw.githubusercontent.com/tanmay-devx/tanmay-devx/stats-output/assets/card-languages.svg" width="100%" alt="Most Used Languages"/>
     </a>
   </td>
 </tr>
@@ -293,9 +286,9 @@ Reproducible AWS infrastructure (`EC2`, `S3`, `IAM`, `VPC`) provisioned declarat
 </tr>
 </table>
 
-<div style="margin-top: 25px;">
-  <img src="https://raw.githubusercontent.com/tanmay-devx/tanmay-devx/stats-output/assets/activity.svg" width="100%" alt="GitHub 3D Contribution Activity"/>
-</div>
+<br/>
+
+<img src="https://raw.githubusercontent.com/tanmay-devx/tanmay-devx/stats-output/assets/activity.svg" width="100%" alt="GitHub 3D Contribution Activity"/>
 
 </div>
 

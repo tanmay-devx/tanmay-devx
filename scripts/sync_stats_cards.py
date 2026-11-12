@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Sync live LeetCode, Codeforces, GitHub Streak, and GitHub Stats SVG cards."""
+"""Sync live LeetCode, GitHub Streak, GitHub Stats, and Top Languages SVG cards."""
 
 from __future__ import annotations
 
@@ -21,7 +21,6 @@ from generate_activity import fetch_via_graphql, fetch_via_public_html  # noqa: 
 
 GH_USERNAME = os.environ.get("GITHUB_USERNAME", "tanmay-devx")
 LC_USERNAME = os.environ.get("LEETCODE_USERNAME", "tanmay041")
-CF_USERNAME = os.environ.get("CODEFORCES_USERNAME", "tanmay0412")
 ASSETS_DIR = Path(os.environ.get("ASSETS_DIR", "assets"))
 IST = dt.timezone(dt.timedelta(hours=5, minutes=30))
 
@@ -62,87 +61,6 @@ def sync_leetcode_card() -> bool:
     except Exception as exc:  # noqa: BLE001
         print(f"Warning: LeetCode sync failed ({exc}); keeping existing card if present.", file=sys.stderr)
         return False
-
-
-def fetch_codeforces_stats() -> dict:
-    """Fetch live Codeforces user info, rating history, and solved stats."""
-    info_resp = http_get_json(f"https://codeforces.com/api/user.info?handles={CF_USERNAME}")
-    user = info_resp["result"][0]
-
-    rating_resp = http_get_json(f"https://codeforces.com/api/user.rating?handle={CF_USERNAME}")
-    rated_contests = len(rating_resp.get("result", []))
-
-    status_resp = http_get_json(f"https://codeforces.com/api/user.status?handle={CF_USERNAME}")
-    submissions = status_resp.get("result", [])
-    solved = {
-        (sub["problem"].get("contestId"), sub["problem"].get("index"))
-        for sub in submissions
-        if sub.get("verdict") == "OK" and "problem" in sub
-    }
-
-    return {
-        "handle": user.get("handle", CF_USERNAME),
-        "rank": user.get("rank", "Unrated").title(),
-        "max_rank": user.get("maxRank", "Unrated").title(),
-        "rating": int(user.get("rating", 0)),
-        "max_rating": int(user.get("maxRating", 0)),
-        "rated_contests": rated_contests,
-        "solved": len(solved),
-        "submissions": len(submissions),
-        "friend_of": int(user.get("friendOfCount", 0)),
-        "contribution": int(user.get("contribution", 0)),
-    }
-
-
-def render_codeforces_svg(cf: dict, synced_tag: str) -> str:
-    """Render a clean dark Codeforces stats SVG matching GitHub dark mode."""
-    rows = [
-        ("Contest Rating:", str(cf["rating"]), "#A371F7"),
-        ("Max Contest Rating:", str(cf["max_rating"]), "#A371F7"),
-        ("Rated Contests:", str(cf["rated_contests"]), "#58A6FF"),
-        ("Problems Solved:", str(cf["solved"]), "#39D353"),
-        ("Submissions:", str(cf["submissions"]), "#79C0FF"),
-        ("Friend of:", str(cf["friend_of"]), "#39D353"),
-        ("Contribution:", str(cf["contribution"]), "#D2A8FF"),
-    ]
-    handle_esc = html_lib.escape(cf["handle"])
-    subtitle_esc = html_lib.escape(f"{cf['rank']} (max: {cf['max_rank']})")
-
-    row_svg = []
-    start_y = 92
-    for idx, (label, val, accent) in enumerate(rows):
-        y = start_y + idx * 21
-        row_svg.append(
-            f'<circle cx="28" cy="{y - 4}" r="3.5" fill="{accent}"/>'
-            f'<text x="42" y="{y}" class="cf-lbl">{html_lib.escape(label)}</text>'
-            f'<text x="468" y="{y}" class="cf-val" text-anchor="end">{html_lib.escape(val)}</text>'
-        )
-
-    return "\n".join(
-        [
-            '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 495 240" width="100%" height="100%">',
-            "<defs>",
-            "  <style>",
-            '    .cf-handle { font-family: "Segoe UI", Ubuntu, -apple-system, sans-serif; font-size: 20px; font-weight: 700; fill: #58A6FF; }',
-            '    .cf-sub { font-family: "Segoe UI", Ubuntu, -apple-system, sans-serif; font-size: 13px; font-weight: 600; fill: #8B949E; }',
-            '    .cf-lbl { font-family: "Segoe UI", Ubuntu, -apple-system, sans-serif; font-size: 13.5px; font-weight: 600; fill: #3FB950; }',
-            '    .cf-val { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13.5px; font-weight: 700; fill: #56D364; }',
-            "    .cf-sync { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 9.5px; fill: #6E7681; }",
-            "  </style>",
-            "</defs>",
-            '<rect width="495" height="240" rx="8" fill="#0D1117" stroke="#30363D" stroke-width="1"/>',
-            '<rect x="24" y="25" width="4" height="11" rx="1" fill="#F2C94C"/>',
-            '<rect x="30" y="19" width="4" height="17" rx="1" fill="#2F80ED"/>',
-            '<rect x="36" y="27" width="4" height="9" rx="1" fill="#EB5757"/>',
-            f'<text x="50" y="34" class="cf-handle">{handle_esc}</text>',
-            f'<text x="468" y="31" class="cf-sync" text-anchor="end">SYNCED {html_lib.escape(synced_tag)}</text>',
-            f'<text x="24" y="58" class="cf-sub">{subtitle_esc}</text>',
-            '<line x1="24" y1="68" x2="471" y2="68" stroke="#21262D" stroke-width="1"/>',
-            *row_svg,
-            "</svg>",
-            "",
-        ]
-    )
 
 
 def format_date_range(start_iso: str, end_iso: str) -> str:
@@ -233,6 +151,24 @@ def collect_lifetime_github_data(token: str | None) -> tuple[dict, dict[str, int
     except Exception:  # noqa: BLE001
         pass
 
+    lang_totals: dict[str, int] = {}
+    for repo in repos:
+        if repo.get("fork"):
+            continue
+        try:
+            repo_langs = http_get_json(
+                f"https://api.github.com/repos/{repo['full_name']}/languages",
+                headers=gh_headers,
+            )
+            for lang_name, byte_count in repo_langs.items():
+                lang_totals[lang_name] = lang_totals.get(lang_name, 0) + int(byte_count)
+        except Exception:  # noqa: BLE001
+            primary_lang = repo.get("language")
+            if primary_lang:
+                lang_totals[primary_lang] = lang_totals.get(primary_lang, 0) + max(
+                    1, int(repo.get("size", 1))
+                )
+
     github_summary = {
         "stars": total_stars,
         "commits_year": commits_this_year,
@@ -243,6 +179,7 @@ def collect_lifetime_github_data(token: str | None) -> tuple[dict, dict[str, int
         "contributed_year": yearly_totals.get(today.year, 0),
         "lifetime_contributions": sum(daily_counts.values()),
         "created_label": created_date.strftime("%b %d, %Y").replace(" 0", " "),
+        "languages": lang_totals,
     }
     return github_summary, daily_counts, today.isoformat()
 
@@ -301,7 +238,7 @@ def compute_streaks(daily_counts: dict[str, int], today_iso: str) -> dict:
 
 
 def render_streak_svg(streaks: dict, created_label: str, synced_tag: str) -> str:
-    """Render GitHub Streak SVG card in dark GitHub theme."""
+    """Render GitHub Streak SVG card in unified dark green GitHub theme."""
     total_str = f"{streaks['total']:,}"
     curr_str = str(streaks["current"])
     long_str = str(streaks["longest"])
@@ -311,9 +248,9 @@ def render_streak_svg(streaks: dict, created_label: str, synced_tag: str) -> str
             '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 495 195" width="100%" height="100%">',
             "<defs>",
             "  <style>",
-            '    .st-big { font-family: "Segoe UI", Ubuntu, -apple-system, sans-serif; font-size: 28px; font-weight: 700; fill: #58A6FF; }',
+            '    .st-big { font-family: "Segoe UI", Ubuntu, -apple-system, sans-serif; font-size: 28px; font-weight: 700; fill: #39D353; }',
             '    .st-curr { font-family: "Segoe UI", Ubuntu, -apple-system, sans-serif; font-size: 28px; font-weight: 700; fill: #F0F6FC; }',
-            '    .st-lbl { font-family: "Segoe UI", Ubuntu, -apple-system, sans-serif; font-size: 13.5px; font-weight: 600; fill: #58A6FF; }',
+            '    .st-lbl { font-family: "Segoe UI", Ubuntu, -apple-system, sans-serif; font-size: 13.5px; font-weight: 600; fill: #C9D1D9; }',
             '    .st-sub { font-family: "Segoe UI", Ubuntu, -apple-system, sans-serif; font-size: 11.5px; font-weight: 500; fill: #3FB950; }',
             "    .st-sync { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 9px; fill: #6E7681; }",
             "  </style>",
@@ -325,7 +262,7 @@ def render_streak_svg(streaks: dict, created_label: str, synced_tag: str) -> str
             f'<text x="82.5" y="88" class="st-big" text-anchor="middle">{html_lib.escape(total_str)}</text>',
             '<text x="82.5" y="122" class="st-lbl" text-anchor="middle">Total Contributions</text>',
             f'<text x="82.5" y="145" class="st-sub" text-anchor="middle">{html_lib.escape(created_label)} - Present</text>',
-            '<circle cx="247.5" cy="74" r="37" fill="none" stroke="#58A6FF" stroke-width="5"/>',
+            '<circle cx="247.5" cy="74" r="37" fill="none" stroke="#39D353" stroke-width="5"/>',
             '<circle cx="247.5" cy="36" r="11" fill="#0D1117"/>',
             '<path d="M247.5 26 C249.5 30 253 32.5 253 36.5 C253 39.8 250.5 42.2 247.5 42.2 C244.5 42.2 242 39.8 242 36.5 C242 34.2 243.3 32 244.8 30.8 C244.6 32.5 245.5 33.4 246.3 33.4 C247.2 33.4 247.5 31.8 247.5 26 Z" fill="#FF9900"/>',
             f'<text x="247.5" y="84" class="st-curr" text-anchor="middle">{html_lib.escape(curr_str)}</text>',
@@ -360,7 +297,7 @@ def compute_rank(gh: dict) -> tuple[str, float]:
 
 
 def render_github_stats_svg(gh: dict, synced_tag: str) -> str:
-    """Render My GitHub Statistics SVG card in dark GitHub theme."""
+    """Render My GitHub Statistics SVG card in unified dark green theme."""
     rank_label, progress = compute_rank(gh)
     radius = 38
     circumference = 2 * math.pi * radius
@@ -378,7 +315,7 @@ def render_github_stats_svg(gh: dict, synced_tag: str) -> str:
     for idx, (lbl, val, path_d) in enumerate(rows):
         y = 66 + idx * 25
         row_svg.append(
-            f'<g transform="translate(24, {y - 12}) scale(0.9)"><path d="{path_d}" fill="#58A6FF"/></g>'
+            f'<g transform="translate(24, {y - 12}) scale(0.9)"><path d="{path_d}" fill="#39D353"/></g>'
             f'<text x="46" y="{y}" class="gh-lbl">{lbl}</text>'
             f'<text x="285" y="{y}" class="gh-val" text-anchor="end">{html_lib.escape(val)}</text>'
         )
@@ -388,7 +325,7 @@ def render_github_stats_svg(gh: dict, synced_tag: str) -> str:
             '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 495 195" width="100%" height="100%">',
             "<defs>",
             "  <style>",
-            '    .gh-title { font-family: "Segoe UI", Ubuntu, -apple-system, sans-serif; font-size: 17px; font-weight: 700; fill: #58A6FF; }',
+            '    .gh-title { font-family: "Segoe UI", Ubuntu, -apple-system, sans-serif; font-size: 17px; font-weight: 700; fill: #39D353; }',
             '    .gh-lbl { font-family: "Segoe UI", Ubuntu, -apple-system, sans-serif; font-size: 13px; font-weight: 600; fill: #C9D1D9; }',
             '    .gh-val { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; font-weight: 700; fill: #F0F6FC; }',
             '    .gh-rank { font-family: "Segoe UI", Ubuntu, -apple-system, sans-serif; font-size: 24px; font-weight: 800; fill: #F0F6FC; }',
@@ -399,9 +336,88 @@ def render_github_stats_svg(gh: dict, synced_tag: str) -> str:
             '<text x="24" y="34" class="gh-title">My GitHub Statistics</text>',
             f'<text x="475" y="24" class="gh-sync" text-anchor="end">SYNCED {html_lib.escape(synced_tag)}</text>',
             *row_svg,
-            '<circle cx="400" cy="108" r="38" fill="none" stroke="#1F2937" stroke-width="7"/>',
-            f'<circle cx="400" cy="108" r="38" fill="none" stroke="#58A6FF" stroke-width="7" stroke-linecap="round" stroke-dasharray="{circumference:.2f}" stroke-dashoffset="{dash_offset:.2f}" transform="rotate(-90 400 108)"/>',
+            '<circle cx="400" cy="108" r="38" fill="none" stroke="#161B22" stroke-width="7"/>',
+            f'<circle cx="400" cy="108" r="38" fill="none" stroke="#39D353" stroke-width="7" stroke-linecap="round" stroke-dasharray="{circumference:.2f}" stroke-dashoffset="{dash_offset:.2f}" transform="rotate(-90 400 108)"/>',
             f'<text x="400" y="116" class="gh-rank" text-anchor="middle">{html_lib.escape(rank_label)}</text>',
+            "</svg>",
+            "",
+        ]
+    )
+
+
+LANG_COLORS = {
+    "TypeScript": "#3178C6",
+    "JavaScript": "#F1E05A",
+    "Python": "#3572A5",
+    "HTML": "#E34C26",
+    "CSS": "#563D7C",
+    "Kotlin": "#A97BFF",
+    "Java": "#B07219",
+    "C++": "#F34B7D",
+    "C": "#6E7681",
+    "HCL": "#844FBA",
+    "Shell": "#89E051",
+    "Dockerfile": "#384D54",
+    "EJS": "#A91E50",
+}
+
+
+def render_languages_svg(lang_totals: dict[str, int], synced_tag: str) -> str:
+    """Render live Most Used Languages card across owned non-fork repositories."""
+    total_bytes = max(1, sum(lang_totals.values()))
+    ranked = sorted(lang_totals.items(), key=lambda kv: kv[1], reverse=True)
+    top_items = ranked[:6]
+    other_bytes = sum(v for _, v in ranked[5:])
+    if len(ranked) > 6 and other_bytes > 0:
+        top_items = [*ranked[:5], ("Other", other_bytes)]
+
+    bar_x = 24.0
+    bar_w = 447.0
+    bar_segments = []
+    cur_x = bar_x
+    for idx, (lang, byte_val) in enumerate(top_items):
+        seg_w = (byte_val / total_bytes) * bar_w
+        if idx == len(top_items) - 1:
+            seg_w = (bar_x + bar_w) - cur_x
+        color = LANG_COLORS.get(lang, "#39D353")
+        bar_segments.append(
+            f'<rect x="{cur_x:.2f}" y="58" width="{max(0.5, seg_w):.2f}" height="10" fill="{color}"/>'
+        )
+        cur_x += seg_w
+
+    legend_svg = []
+    for idx, (lang, byte_val) in enumerate(top_items):
+        col = idx % 2
+        row = idx // 2
+        lx = 24 + col * 230
+        ly = 98 + row * 30
+        pct = (byte_val / total_bytes) * 100.0
+        color = LANG_COLORS.get(lang, "#39D353")
+        legend_svg.append(
+            f'<circle cx="{lx + 5}" cy="{ly - 4}" r="4.5" fill="{color}"/>'
+            f'<text x="{lx + 18}" y="{ly}" class="lg-name">{html_lib.escape(lang)}</text>'
+            f'<text x="{lx + 205}" y="{ly}" class="lg-pct" text-anchor="end">{pct:.1f}%</text>'
+        )
+
+    return "\n".join(
+        [
+            '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 495 195" width="100%" height="100%">',
+            "<defs>",
+            "  <style>",
+            '    .lg-title { font-family: "Segoe UI", Ubuntu, -apple-system, sans-serif; font-size: 17px; font-weight: 700; fill: #39D353; }',
+            '    .lg-name { font-family: "Segoe UI", Ubuntu, -apple-system, sans-serif; font-size: 13px; font-weight: 600; fill: #C9D1D9; }',
+            '    .lg-pct { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px; font-weight: 600; fill: #8B949E; }',
+            "    .lg-sync { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 9px; fill: #6E7681; }",
+            "  </style>",
+            '  <clipPath id="barClip"><rect x="24" y="58" width="447" height="10" rx="5"/></clipPath>',
+            "</defs>",
+            '<rect width="495" height="195" rx="8" fill="#0D1117" stroke="#30363D" stroke-width="1"/>',
+            '<text x="24" y="34" class="lg-title">Most Used Languages</text>',
+            f'<text x="471" y="24" class="lg-sync" text-anchor="end">SYNCED {html_lib.escape(synced_tag)}</text>',
+            '<g clip-path="url(#barClip)">',
+            *bar_segments,
+            "</g>",
+            *legend_svg,
             "</svg>",
             "",
         ]
@@ -414,19 +430,7 @@ def main() -> int:
     # 1. LeetCode
     sync_leetcode_card()
 
-    # 2. Codeforces
-    try:
-        cf_stats = fetch_codeforces_stats()
-        cf_svg = render_codeforces_svg(cf_stats, synced_tag)
-        save_valid_svg(ASSETS_DIR / "card-codeforces.svg", cf_svg)
-        print(
-            f"Synced card-codeforces.svg: rating={cf_stats['rating']}, "
-            f"solved={cf_stats['solved']}, submissions={cf_stats['submissions']}"
-        )
-    except Exception as exc:  # noqa: BLE001
-        print(f"Warning: Codeforces sync failed ({exc}); keeping existing card if present.", file=sys.stderr)
-
-    # 3 & 4. GitHub Streak + GitHub Stats
+    # 2, 3, 4. GitHub Streak, GitHub Stats & Top Languages
     token = os.environ.get("GH_STATS_TOKEN") or os.environ.get("GITHUB_TOKEN")
     try:
         gh_summary, daily_counts, today_iso = collect_lifetime_github_data(token)
@@ -438,10 +442,14 @@ def main() -> int:
         gh_svg = render_github_stats_svg(gh_summary, synced_tag)
         save_valid_svg(ASSETS_DIR / "card-github.svg", gh_svg)
 
+        lang_svg = render_languages_svg(gh_summary["languages"], synced_tag)
+        save_valid_svg(ASSETS_DIR / "card-languages.svg", lang_svg)
+
         print(
-            f"Synced card-streak.svg & card-github.svg: total={streaks['total']}, "
-            f"current_streak={streaks['current']}d ({streaks['current_range']}), "
-            f"longest_streak={streaks['longest']}d, commits_{gh_summary['year']}={gh_summary['commits_year']}"
+            f"Synced card-streak.svg, card-github.svg & card-languages.svg: "
+            f"total={streaks['total']}, current_streak={streaks['current']}d ({streaks['current_range']}), "
+            f"longest_streak={streaks['longest']}d, commits_{gh_summary['year']}={gh_summary['commits_year']}, "
+            f"langs={len(gh_summary['languages'])}"
         )
     except Exception as exc:  # noqa: BLE001
         print(f"Warning: GitHub stats sync failed ({exc}); keeping existing cards if present.", file=sys.stderr)

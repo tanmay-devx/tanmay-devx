@@ -35,7 +35,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_USERNAME: tanmay-devx
           LEETCODE_USERNAME: tanmay041
-          CODEFORCES_USERNAME: tanmay0412
           ACTIVITY_SVG_PATH: assets/activity.svg
           ASSETS_DIR: assets
         run: |
@@ -47,7 +46,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           mkdir -p /tmp/stats-out/assets
-          cp assets/activity.svg assets/card-leetcode.svg assets/card-codeforces.svg assets/card-streak.svg assets/card-github.svg /tmp/stats-out/assets/
+          cp assets/activity.svg assets/card-leetcode.svg assets/card-languages.svg assets/card-streak.svg assets/card-github.svg /tmp/stats-out/assets/
           cd /tmp/stats-out
           git init -b stats-output
           git config user.name "github-actions[bot]"
