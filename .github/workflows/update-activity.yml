@@ -42,14 +42,16 @@ jobs:
           python3 scripts/generate_activity.py
           python3 scripts/sync_stats_cards.py
 
-      - name: Commit updated SVG assets if changed
+      - name: Publish synced SVGs to stats-output branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          mkdir -p /tmp/stats-out/assets
+          cp assets/activity.svg assets/card-leetcode.svg assets/card-codeforces.svg assets/card-streak.svg assets/card-github.svg /tmp/stats-out/assets/
+          cd /tmp/stats-out
+          git init -b stats-output
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/activity.svg assets/card-leetcode.svg assets/card-codeforces.svg assets/card-streak.svg assets/card-github.svg
-          if git diff --cached --quiet; then
-            echo "No changes to SVG assets."
-          else
-            git commit -m "chore: sync live GitHub, LeetCode & Codeforces stats [skip ci]"
-            git push
-          fi
+          git add assets/
+          git commit -m "chore: sync live GitHub, LeetCode & Codeforces stats"
+          git push --force "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git" stats-output

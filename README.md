@@ -248,31 +248,31 @@ Demonstrated proficiency in large language model architectures and cloud-hosted 
 <tr>
   <td width="50%" align="center">
     <a href="https://leetcode.com/u/tanmay041/">
-      <img src="./assets/card-leetcode.svg" width="100%" alt="LeetCode Stats"/>
+      <img src="https://raw.githubusercontent.com/tanmay-devx/tanmay-devx/stats-output/assets/card-leetcode.svg" width="100%" alt="LeetCode Stats"/>
     </a>
   </td>
   <td width="50%" align="center">
     <a href="https://codeforces.com/profile/tanmay0412">
-      <img src="./assets/card-codeforces.svg" width="100%" alt="Codeforces Stats"/>
+      <img src="https://raw.githubusercontent.com/tanmay-devx/tanmay-devx/stats-output/assets/card-codeforces.svg" width="100%" alt="Codeforces Stats"/>
     </a>
   </td>
 </tr>
 <tr>
   <td width="50%" align="center">
     <a href="https://github.com/tanmay-devx">
-      <img src="./assets/card-streak.svg" width="100%" alt="GitHub Streak"/>
+      <img src="https://raw.githubusercontent.com/tanmay-devx/tanmay-devx/stats-output/assets/card-streak.svg" width="100%" alt="GitHub Streak"/>
     </a>
   </td>
   <td width="50%" align="center">
     <a href="https://github.com/tanmay-devx">
-      <img src="./assets/card-github.svg" width="100%" alt="GitHub Stats"/>
+      <img src="https://raw.githubusercontent.com/tanmay-devx/tanmay-devx/stats-output/assets/card-github.svg" width="100%" alt="GitHub Stats"/>
     </a>
   </td>
 </tr>
 </table>
 
 <div style="margin-top: 25px;">
-  <img src="./assets/activity.svg" width="100%" alt="GitHub 3D Contribution Activity"/>
+  <img src="https://raw.githubusercontent.com/tanmay-devx/tanmay-devx/stats-output/assets/activity.svg" width="100%" alt="GitHub 3D Contribution Activity"/>
 </div>
 
 </div>
