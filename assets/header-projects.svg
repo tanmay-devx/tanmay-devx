@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 62" width="100%" height="100%">
+<defs>
+  <style>
+    .num { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 14px; font-weight: 700; fill: #39D353; }
+    .title { font-family: Georgia, "Times New Roman", serif; font-size: 28px; fill: #F0F6FC; font-weight: normal; letter-spacing: -0.2px; }
+    .tag { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 11px; fill: #8B949E; font-weight: 500; }
+    @keyframes beamSweep {
+      0%   { transform: translateX(-180px); opacity: 0; }
+      15%  { opacity: 1; }
+      85%  { opacity: 1; }
+      100% { transform: translateX(1040px); opacity: 0; }
+    }
+    .beam { animation: beamSweep 5.5s infinite cubic-bezier(0.4, 0, 0.2, 1); animation-delay: -1.2s; }
+  </style>
+  <linearGradient id="beamGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#39D353" stop-opacity="0"/>
+    <stop offset="50%" stop-color="#39D353" stop-opacity="0.95"/>
+    <stop offset="100%" stop-color="#58A6FF" stop-opacity="0"/>
+  </linearGradient>
+  <clipPath id="ruleClip">
+    <rect x="0" y="53" width="1040" height="2"/>
+  </clipPath>
+</defs>
+<text x="6" y="38" class="num">02</text>
+<text x="36" y="38" class="title">Key Engineering Projects</text>
+<text x="1034" y="37" class="tag" text-anchor="end">production systems · architecture</text>
+<line x1="6" y1="54" x2="1034" y2="54" stroke="#21262D" stroke-width="1.5"/>
+<line x1="6" y1="54" x2="62" y2="54" stroke="#39D353" stroke-width="2"/>
+<g clip-path="url(#ruleClip)">
+  <rect x="0" y="53" width="180" height="2" fill="url(#beamGrad)" class="beam"/>
+</g>
+</svg>

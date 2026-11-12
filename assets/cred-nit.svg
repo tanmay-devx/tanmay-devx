@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 504 156" width="100%" height="100%">
+<defs>
+  <style>
+    .badge { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 10px; font-weight: 700; letter-spacing: 1.2px; }
+    .title { font-family: "Segoe UI", Ubuntu, -apple-system, sans-serif; font-size: 17px; font-weight: 700; fill: #F0F6FC; }
+    .sub { font-family: "Segoe UI", Ubuntu, -apple-system, sans-serif; font-size: 12.5px; font-weight: 400; fill: #9CA3AF; }
+    .cta { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; }
+    @keyframes cardShimmer {
+      0%   { transform: translateX(-220px); opacity: 0; }
+      15%  { opacity: 0.32; }
+      55%  { opacity: 0.32; }
+      70%  { transform: translateX(724px); opacity: 0; }
+      100% { transform: translateX(724px); opacity: 0; }
+    }
+    @keyframes borderPulse {
+      0%, 100% { stroke-opacity: 0.35; }
+      50%      { stroke-opacity: 0.85; }
+    }
+    .shimmer { animation: cardShimmer 7.5s infinite ease-in-out; animation-delay: -5.0s; }
+    .pulse-border { animation: borderPulse 5s infinite ease-in-out; animation-delay: -5.0s; }
+  </style>
+  <linearGradient id="shimmerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#39D353" stop-opacity="0"/>
+    <stop offset="50%" stop-color="#39D353" stop-opacity="0.18"/>
+    <stop offset="100%" stop-color="#39D353" stop-opacity="0"/>
+  </linearGradient>
+  <clipPath id="cardClip">
+    <rect x="1" y="1" width="502" height="154" rx="9"/>
+  </clipPath>
+</defs>
+<rect x="1" y="1" width="502" height="154" rx="9" fill="#0D1117" stroke="#30363D" stroke-width="1"/>
+<rect x="1" y="1" width="502" height="154" rx="9" fill="none" stroke="#39D353" stroke-width="1.2" class="pulse-border"/>
+<g clip-path="url(#cardClip)">
+  <g transform="skewX(-18)">
+    <rect x="0" y="0" width="180" height="156" fill="url(#shimmerGrad)" class="shimmer"/>
+  </g>
+</g>
+<rect x="1" y="20" width="3" height="116" rx="1.5" fill="#39D353"/>
+<g transform="translate(26, 20)">
+  <circle cx="10" cy="12" r="5.5" fill="none" stroke="#39D353" stroke-width="1.7"/><path d="M7 2.5 9.2 6.8m3.8-4.3L10.8 6.8" stroke="#39D353" stroke-width="1.7" stroke-linecap="round"/>
+</g>
+<text x="56" y="34" class="badge" fill="#39D353">TOP 10 · 100+ TEAMS NATIONWIDE</text>
+<text x="26" y="70" class="title">NIT Jalandhar Hackathon — Finalist</text>
+<text x="26" y="96" class="sub">Selected in Top 10 out of 100+ engineering teams in a 36-hour sprint</text>
+<text x="26" y="134" class="cta" fill="#8B949E">NATIONAL HACKATHON RECOGNITION</text>
+</svg>

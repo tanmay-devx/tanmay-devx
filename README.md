@@ -40,27 +40,33 @@
 
 ---
 
-## 📌 Executive Summary
-
-- **Backend & Distributed Systems:** Building decoupled, event-driven services using Node.js, NestJS, RabbitMQ, and PostgreSQL.
-- **Process Sandboxing & Security:** Isolating untrusted execution environments using Rootless Podman with dropped capabilities and Linux cgroups.
-- **Defensive Engineering:** Implementing manual consumer acknowledgments, circuit breakers, and bounded memory streaming over superficial abstractions.
-- **Cloud & Infrastructure:** Provisioning reproducible environments on AWS (EC2, S3, IAM, VPC) with Terraform and Docker.
+<div align="center">
+  <img src="./assets/executive-summary.svg" width="100%" alt="01 Executive Summary"/>
+</div>
 
 ---
 
-## 🚀 Key Engineering Projects
+<div align="center">
+  <img src="./assets/header-projects.svg" width="100%" alt="02 Key Engineering Projects"/>
+</div>
 
 <table>
 <tr>
 <td width="50%" valign="top">
 
 ### 01. [CodVidya — Distributed Code Judge](https://github.com/tanmay-devx/Coditorium)
-*Asynchronous execution engine and evaluation platform.*
+*Asynchronous execution engine and isolated grading platform.*
 
-- Decoupled judge pipeline handling concurrent student submissions via RabbitMQ.
-- Sandboxed compilation and test-case grading inside rootless Podman containers.
-- Turborepo monorepo structuring API, worker service, and shared schemas.
+- Decoupled **RabbitMQ** judge queue handling concurrent submissions with manual ACKs.
+- Sandboxed compilation and execution inside **Rootless Podman** containers with cgroup limits.
+- **Turborepo** monorepo unifying API gateway, worker service, and shared Prisma schemas.
+
+<details>
+<summary>⚡ Architecture &amp; Pipeline Flow</summary>
+
+`Client → NestJS API → RabbitMQ Queue → Rootless Podman Worker → PostgreSQL`
+
+</details>
 
 `NestJS` `TypeScript` `RabbitMQ` `Podman` `PostgreSQL` `Prisma`
 
@@ -74,11 +80,18 @@
 <td width="50%" valign="top">
 
 ### 02. [NijiSamvad — Encrypted Real-Time Mesh](https://github.com/tanmay-devx/NijiSamvad)
-*Zero-knowledge communication and P2P WebRTC platform.*
+*Zero-knowledge communication and peer-to-peer WebRTC platform.*
 
-- Client-side AES-256-GCM encryption with PBKDF2 (100k iterations) key derivation.
-- Stateless WebSocket signaling server with zero plaintext exposure.
-- Direct peer-to-peer audio/video streaming over WebRTC mesh.
+- Client-side **AES-256-GCM** encryption with **PBKDF2 (100k iterations)** key derivation.
+- Stateless **Socket.IO** signaling server guaranteeing zero plaintext server exposure.
+- Direct peer-to-peer audio/video streaming over resilient **WebRTC** mesh topology.
+
+<details>
+<summary>⚡ Architecture &amp; Pipeline Flow</summary>
+
+`Web Crypto (AES-GCM) → Stateless Socket.IO Signaling ↔ P2P WebRTC Mesh`
+
+</details>
 
 `React` `Node.js` `Socket.IO` `WebRTC` `Web Crypto API`
 
@@ -100,9 +113,16 @@
 ### 03. [DropX — Ephemeral Data Exchange](https://github.com/tanmay-devx/dropx)
 *Accountless temporary cross-device file sharing platform.*
 
-- Session synchronization and automated TTL data cleanup backed by Redis.
-- Express raw buffer payload handling with enforced 100MB memory ceilings.
-- End-to-end payload encryption before local transit.
+- Automated **Redis** TTL session lifecycle and ephemeral room cleanup.
+- Raw Express buffer streaming with enforced **100MB** bounded memory ceilings.
+- End-to-end client-side payload encryption prior to local transit.
+
+<details>
+<summary>⚡ Architecture &amp; Pipeline Flow</summary>
+
+`Encrypted Buffer → Express 100MB Stream → Socket.IO Room + Redis TTL`
+
+</details>
 
 `Node.js` `Express.js` `Redis` `Socket.IO` `React`
 
@@ -122,9 +142,16 @@
 ### 04. [Planrova — Local-First Study System](https://github.com/tanmay-devx/planrova)
 *Offline-capable academic productivity ecosystem.*
 
-- Custom Android Kotlin `AlarmManager` bridge (`setAlarmClock()`) bypassing OS Doze limits.
-- Local-first offline persistence with selective Cloud Firestore synchronization.
-- Multimodal Groq Vision OCR pipeline for study note digitization.
+- Native Android Kotlin **AlarmManager** (`setAlarmClock()`) bridge bypassing OS Doze limits.
+- Local-first offline persistence paired with selective **Cloud Firestore** sync.
+- Multimodal **Groq Vision OCR** pipeline converting handwritten notes into structured tasks.
+
+<details>
+<summary>⚡ Architecture &amp; Pipeline Flow</summary>
+
+`Local Store ⇄ Firestore Sync · Kotlin AlarmManager · Groq Vision OCR`
+
+</details>
 
 `React Native` `Expo` `Kotlin` `Firestore` `Groq API`
 
@@ -146,9 +173,16 @@
 ### 05. [Sanjeevni AI — Multimodal Intake Kiosk](https://github.com/tanmay-devx/Sanjeevni-AI)
 *AI-assisted clinic intake kiosk with 3D interaction and localized edge storage.*
 
-- Edge-deployed SQLite (`better-sqlite3`) persisting intake logs during network dropouts.
-- Interactive 3D avatar (Three.js) and 2D anatomical pain coordinate mapping.
-- Multilingual speech recognition (Hindi / Hinglish / English) with Groq LLaMA clinical summaries.
+- Edge-deployed **SQLite (`better-sqlite3`)** persisting patient intake logs during network dropouts.
+- Interactive **Three.js** 3D anatomical avatar and 2D pain coordinate mapping.
+- Multilingual voice intake (**Hindi / Hinglish / English**) synthesized via **Groq LLaMA** clinical summaries.
+
+<details>
+<summary>⚡ Architecture &amp; Pipeline Flow</summary>
+
+`Voice + 3D Anatomy UI → Node.js Edge API → SQLite Offline Store + Groq LLaMA Triage`
+
+</details>
 
 `React 18` `Three.js` `Node.js` `SQLite` `Groq LLaMA`
 
@@ -168,47 +202,37 @@
 
 ---
 
-## 🏆 Verified Credentials & Honors
+<div align="center">
+  <img src="./assets/header-credentials.svg" width="100%" alt="03 Verified Credentials and Honors"/>
+</div>
 
 <table width="100%">
 <tr>
-<td width="50%" valign="top">
-
-#### ☁️ AWS Certified Cloud Practitioner
-Amazon Web Services &bull; Validated core cloud infrastructure, IAM security, and Well-Architected Framework principles.  
-🔗 [**Verify AWS Credential →**](https://cp.certmetrics.com/amazon/en/public/verify/credential/fac9701f985443a3a5cad85982cc6520)
-
-</td>
-<td width="50%" valign="top">
-
-#### 🤖 AWS Certified AI Practitioner
-Amazon Web Services &bull; Validated machine learning pipelines, cloud AI services, and responsible AI governance.  
-🔗 [**Verify AWS Credential →**](https://cp.certmetrics.com/amazon/en/public/verify/credential/4ad652a9eeee41e39af0dfabae4fcc8a)
-
-</td>
+  <td width="50%" valign="top">
+    <a href="https://cp.certmetrics.com/amazon/en/public/verify/credential/fac9701f985443a3a5cad85982cc6520" target="_blank">
+      <img src="./assets/cred-aws-cloud.svg" width="100%" alt="AWS Certified Cloud Practitioner"/>
+    </a>
+  </td>
+  <td width="50%" valign="top">
+    <a href="https://cp.certmetrics.com/amazon/en/public/verify/credential/4ad652a9eeee41e39af0dfabae4fcc8a" target="_blank">
+      <img src="./assets/cred-aws-ai.svg" width="100%" alt="AWS Certified AI Practitioner"/>
+    </a>
+  </td>
 </tr>
 <tr>
-<td width="50%" valign="top">
-
-#### 🥇 Innotech Hackathon — 1st Place Winner
-Ranked **1st among 400+ participants** with our team, presenting CodVidya's asynchronous judging architecture.
-
-</td>
-<td width="50%" valign="top">
-
-#### 🏅 NIT Jalandhar Hackathon — Top 10 Finalist
-Selected in the **Top 10 out of 100+ competing engineering teams** across India in a 36-hour sprint.
-
-</td>
+  <td width="50%" valign="top">
+    <img src="./assets/cred-innotech.svg" width="100%" alt="Innotech Hackathon — 1st Place Winner"/>
+  </td>
+  <td width="50%" valign="top">
+    <img src="./assets/cred-nit.svg" width="100%" alt="NIT Jalandhar Hackathon — Top 10 Finalist"/>
+  </td>
 </tr>
 <tr>
-<td colspan="2" valign="top">
-
-#### 📜 AWS Academy Graduate — Generative AI Foundations
-Demonstrated proficiency in large language model architectures and cloud-hosted inference pipelines.  
-🔗 [**Verify Credly Badge →**](https://www.credly.com/earner/earned/badge/ff32dd8b-470b-4dd4-b7da-536382d97959)
-
-</td>
+  <td colspan="2" valign="top">
+    <a href="https://www.credly.com/earner/earned/badge/ff32dd8b-470b-4dd4-b7da-536382d97959" target="_blank">
+      <img src="./assets/cred-aws-genai.svg" width="100%" alt="AWS Academy Graduate — Generative AI Foundations"/>
+    </a>
+  </td>
 </tr>
 </table>
 
