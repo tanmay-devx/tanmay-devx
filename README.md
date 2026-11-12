@@ -38,29 +38,61 @@
 
 </div>
 
----
+## 01 · Executive Summary
+<img src="./assets/section-rail.svg" width="100%" alt=""/>
 
-## 📌 Executive Summary
+<table width="100%">
+<tr>
+<td width="50%" valign="top">
 
-- **Backend & Distributed Systems:** Building decoupled, event-driven services using Node.js, NestJS, RabbitMQ, and PostgreSQL.
-- **Process Sandboxing & Security:** Isolating untrusted execution environments using Rootless Podman with dropped capabilities and Linux cgroups.
-- **Defensive Engineering:** Implementing manual consumer acknowledgments, circuit breakers, and bounded memory streaming over superficial abstractions.
-- **Cloud & Infrastructure:** Provisioning reproducible environments on AWS (EC2, S3, IAM, VPC) with Terraform and Docker.
+#### Backend & Distributed Systems
+Decoupled, event-driven services, async worker pipelines, and ACID relational persistence designed for horizontal scale.
 
----
+`Node.js` `NestJS` `RabbitMQ` `PostgreSQL` `Prisma`
 
-## 🚀 Key Engineering Projects
+</td>
+<td width="50%" valign="top">
 
-<table>
+#### Process Sandboxing & Security
+Untrusted workload isolation with Rootless Podman, dropped Linux capabilities, strict `cgroups`, and zero-knowledge encryption.
+
+`Rootless Podman` `Linux cgroups` `AES-256-GCM` `Web Crypto`
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+#### Defensive Reliability
+Manual AMQP consumer ACKs, bounded `100MB` memory streams, Redis TTL lifecycles, and offline-first local edge persistence.
+
+`AMQP ACKs` `Circuit Breakers` `Redis` `SQLite`
+
+</td>
+<td width="50%" valign="top">
+
+#### Cloud & Infrastructure
+Reproducible AWS infrastructure (`EC2`, `S3`, `IAM`, `VPC`) provisioned declaratively with Terraform and multi-stage containers.
+
+`AWS` `Terraform` `Docker` `GitHub Actions` `Linux`
+
+</td>
+</tr>
+</table>
+
+## 02 · Key Engineering Projects
+<img src="./assets/section-rail.svg" width="100%" alt=""/>
+
+<table width="100%">
 <tr>
 <td width="50%" valign="top">
 
 ### 01. [CodVidya — Distributed Code Judge](https://github.com/tanmay-devx/Coditorium)
-*Asynchronous execution engine and evaluation platform.*
+*Asynchronous execution engine and isolated evaluation platform.*
 
-- Decoupled judge pipeline handling concurrent student submissions via RabbitMQ.
-- Sandboxed compilation and test-case grading inside rootless Podman containers.
-- Turborepo monorepo structuring API, worker service, and shared schemas.
+- **Async Judge Pipeline:** Concurrent student submissions decoupled via RabbitMQ with manual consumer ACKs.
+- **Rootless Isolation:** Untrusted code compiled and graded inside rootless Podman containers with strict resource caps.
+- **Monorepo Layout:** Turborepo workspace unifying API gateway, worker service, and shared Prisma schemas.
 
 `NestJS` `TypeScript` `RabbitMQ` `Podman` `PostgreSQL` `Prisma`
 
@@ -74,11 +106,11 @@
 <td width="50%" valign="top">
 
 ### 02. [NijiSamvad — Encrypted Real-Time Mesh](https://github.com/tanmay-devx/NijiSamvad)
-*Zero-knowledge communication and P2P WebRTC platform.*
+*Zero-knowledge communication and peer-to-peer WebRTC platform.*
 
-- Client-side AES-256-GCM encryption with PBKDF2 (100k iterations) key derivation.
-- Stateless WebSocket signaling server with zero plaintext exposure.
-- Direct peer-to-peer audio/video streaming over WebRTC mesh.
+- **Client Cryptography:** End-to-end `AES-256-GCM` encryption with `PBKDF2` (100k iterations) key derivation.
+- **Zero-Knowledge Signaling:** Stateless Socket.IO relay with zero plaintext payload exposure on the server.
+- **P2P Media Transport:** Direct peer-to-peer audio/video streaming over resilient WebRTC mesh topology.
 
 `React` `Node.js` `Socket.IO` `WebRTC` `Web Crypto API`
 
@@ -100,9 +132,9 @@
 ### 03. [DropX — Ephemeral Data Exchange](https://github.com/tanmay-devx/dropx)
 *Accountless temporary cross-device file sharing platform.*
 
-- Session synchronization and automated TTL data cleanup backed by Redis.
-- Express raw buffer payload handling with enforced 100MB memory ceilings.
-- End-to-end payload encryption before local transit.
+- **Ephemeral Lifecycle:** Real-time room synchronization and automated TTL eviction backed by Redis.
+- **Bounded Streaming:** Raw Express buffer ingestion with enforced `100MB` memory ceilings.
+- **Transit Privacy:** Client-side payload encryption applied before files enter local relay channels.
 
 `Node.js` `Express.js` `Redis` `Socket.IO` `React`
 
@@ -122,9 +154,9 @@
 ### 04. [Planrova — Local-First Study System](https://github.com/tanmay-devx/planrova)
 *Offline-capable academic productivity ecosystem.*
 
-- Custom Android Kotlin `AlarmManager` bridge (`setAlarmClock()`) bypassing OS Doze limits.
-- Local-first offline persistence with selective Cloud Firestore synchronization.
-- Multimodal Groq Vision OCR pipeline for study note digitization.
+- **Native Alarm Bridge:** Custom Android Kotlin `AlarmManager` (`setAlarmClock()`) bypassing OS Doze limits.
+- **Offline-First Sync:** Durable local persistence paired with selective Cloud Firestore conflict reconciliation.
+- **Multimodal OCR:** Groq Vision extraction pipeline digitizing handwritten study notes into structured plans.
 
 `React Native` `Expo` `Kotlin` `Firestore` `Groq API`
 
@@ -144,11 +176,11 @@
 <td colspan="2" valign="top">
 
 ### 05. [Sanjeevni AI — Multimodal Intake Kiosk](https://github.com/tanmay-devx/Sanjeevni-AI)
-*AI-assisted clinic intake kiosk with 3D interaction and localized edge storage.*
+*AI-assisted clinic intake kiosk with 3D anatomical interaction and localized edge storage.*
 
-- Edge-deployed SQLite (`better-sqlite3`) persisting intake logs during network dropouts.
-- Interactive 3D avatar (Three.js) and 2D anatomical pain coordinate mapping.
-- Multilingual speech recognition (Hindi / Hinglish / English) with Groq LLaMA clinical summaries.
+- **Edge Offline Persistence:** Local `better-sqlite3` write-ahead storage preserving patient intake logs during clinic network dropouts.
+- **3D & 2D Symptom Mapping:** Interactive Three.js 3D avatar synchronized with 2D anatomical pain coordinate capture.
+- **Multilingual Clinical Triage:** Hindi / Hinglish / English speech recognition synthesized into structured summaries via Groq LLaMA.
 
 `React 18` `Three.js` `Node.js` `SQLite` `Groq LLaMA`
 
@@ -166,63 +198,53 @@
 </tr>
 </table>
 
----
-
-## 🏆 Verified Credentials & Honors
+## 03 · Verified Credentials & Honors
+<img src="./assets/section-rail.svg" width="100%" alt=""/>
 
 <table width="100%">
 <tr>
-<td width="50%" valign="top">
+<td width="54%" valign="top">
 
-#### ☁️ AWS Certified Cloud Practitioner
-Amazon Web Services &bull; Validated core cloud infrastructure, IAM security, and Well-Architected Framework principles.  
-🔗 [**Verify AWS Credential →**](https://cp.certmetrics.com/amazon/en/public/verify/credential/fac9701f985443a3a5cad85982cc6520)
+#### Cloud & AI Certifications
 
-</td>
-<td width="50%" valign="top">
+- **AWS Certified Cloud Practitioner** — *Amazon Web Services*  
+  Core cloud infrastructure, IAM security, and Well-Architected principles.  
+  <a href="https://cp.certmetrics.com/amazon/en/public/verify/credential/fac9701f985443a3a5cad85982cc6520" target="_blank"><img src="https://img.shields.io/badge/Verify-AWS_Credential-232F3E?style=flat-square&logo=amazonaws&logoColor=FF9900" alt="Verify AWS Cloud Practitioner"/></a>
 
-#### 🤖 AWS Certified AI Practitioner
-Amazon Web Services &bull; Validated machine learning pipelines, cloud AI services, and responsible AI governance.  
-🔗 [**Verify AWS Credential →**](https://cp.certmetrics.com/amazon/en/public/verify/credential/4ad652a9eeee41e39af0dfabae4fcc8a)
+- **AWS Certified AI Practitioner** — *Amazon Web Services*  
+  ML pipelines, foundation models, and responsible AI governance.  
+  <a href="https://cp.certmetrics.com/amazon/en/public/verify/credential/4ad652a9eeee41e39af0dfabae4fcc8a" target="_blank"><img src="https://img.shields.io/badge/Verify-AWS_Credential-232F3E?style=flat-square&logo=amazonaws&logoColor=FF9900" alt="Verify AWS AI Practitioner"/></a>
 
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-
-#### 🥇 Innotech Hackathon — 1st Place Winner
-Ranked **1st among 400+ participants** with our team, presenting CodVidya's asynchronous judging architecture.
+- **AWS Academy Graduate — Generative AI Foundations**  
+  Large language model architectures and cloud-hosted inference pipelines.  
+  <a href="https://www.credly.com/earner/earned/badge/ff32dd8b-470b-4dd4-b7da-536382d97959" target="_blank"><img src="https://img.shields.io/badge/Verify-Credly_Badge-FF6B00?style=flat-square&logo=credly&logoColor=white" alt="Verify Credly Badge"/></a>
 
 </td>
-<td width="50%" valign="top">
+<td width="46%" valign="top">
 
-#### 🏅 NIT Jalandhar Hackathon — Top 10 Finalist
-Selected in the **Top 10 out of 100+ competing engineering teams** across India in a 36-hour sprint.
+#### Engineering & Hackathon Honors
 
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top">
+- **Innotech Hackathon**  
+  <img src="https://img.shields.io/badge/1st_Place-400%2B_Participants-238636?style=flat-square" alt="1st Place out of 400+ participants"/>  
+  Ranked **1st overall** presenting CodVidya's asynchronous RabbitMQ + Rootless Podman judging architecture.
 
-#### 📜 AWS Academy Graduate — Generative AI Foundations
-Demonstrated proficiency in large language model architectures and cloud-hosted inference pipelines.  
-🔗 [**Verify Credly Badge →**](https://www.credly.com/earner/earned/badge/ff32dd8b-470b-4dd4-b7da-536382d97959)
+- **NIT Jalandhar Hackathon**  
+  <img src="https://img.shields.io/badge/Top_10_Finalist-100%2B_Teams_Across_India-1F6FEB?style=flat-square" alt="Top 10 Finalist out of 100+ teams"/>  
+  Selected among the **Top 10 engineering teams** nationwide during a 36-hour build sprint.
 
 </td>
 </tr>
 </table>
 
----
-
-## 🛠️ One Engineer, Every Layer of a Distributed System
+## 04 · One Engineer, Every Layer of a Distributed System
+<img src="./assets/section-rail.svg" width="100%" alt=""/>
 
 <div align="center">
   <img src="./assets/distributed-system-layers.svg" width="100%" alt="One engineer, every layer of a distributed system"/>
 </div>
 
----
-
-## 🧮 Problem Solving & Engineering Activity
+## 05 · Problem Solving & Engineering Activity
+<img src="./assets/section-rail.svg" width="100%" alt=""/>
 
 <div align="center">
 
