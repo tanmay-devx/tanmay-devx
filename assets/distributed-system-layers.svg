@@ -5,60 +5,234 @@
     .flow-tag { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 11px; fill: #39D353; font-weight: 500; letter-spacing: 0.5px; }
     .layer-tag { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; }
     .tech-stack { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 12.5px; font-weight: 500; }
-    .applied-lbl { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 10px; font-weight: 600; fill: #8B949E; letter-spacing: 1.2px; }
+    .applied-lbl { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 10px; font-weight: 600; letter-spacing: 1.2px; }
+    .applied-lbl-active { fill: #7EE787; }
     .applied-val { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 11.5px; font-weight: 400; }
+
+    @keyframes layerActive {
+      0%   { opacity: 0; }
+      3%   { opacity: 1; }
+      12%  { opacity: 1; }
+      18%  { opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+    @keyframes spineTrace {
+      0%, 9%       { stroke-dashoffset: 405; opacity: 1; }
+      16.67%, 25.67% { stroke-dashoffset: 324; opacity: 1; }
+      33.33%, 42.33% { stroke-dashoffset: 243; opacity: 1; }
+      50%, 59%     { stroke-dashoffset: 162; opacity: 1; }
+      66.67%, 75.67% { stroke-dashoffset: 81; opacity: 1; }
+      83.33%, 92%  { stroke-dashoffset: 0; opacity: 1; }
+      96%          { stroke-dashoffset: 0; opacity: 0; }
+      97%          { stroke-dashoffset: 405; opacity: 0; }
+      100%         { stroke-dashoffset: 405; opacity: 1; }
+    }
+
+    @keyframes packetFlow {
+      0%, 9%       { transform: translateY(0px); opacity: 1; }
+      16.67%, 25.67% { transform: translateY(81px); opacity: 1; }
+      33.33%, 42.33% { transform: translateY(162px); opacity: 1; }
+      50%, 59%     { transform: translateY(243px); opacity: 1; }
+      66.67%, 75.67% { transform: translateY(324px); opacity: 1; }
+      83.33%, 92%  { transform: translateY(405px); opacity: 1; }
+      96%          { transform: translateY(405px); opacity: 0; }
+      97%          { transform: translateY(0px); opacity: 0; }
+      100%         { transform: translateY(0px); opacity: 1; }
+    }
+
+    @keyframes flowTagPulse {
+      0%, 100% { opacity: 0.75; }
+      50%      { opacity: 1; }
+    }
+
+    .layer-active { animation: layerActive 9s infinite linear; }
+    .l1 { animation-delay: -0.27s; }
+    .l2 { animation-delay: -7.77s; }
+    .l3 { animation-delay: -6.27s; }
+    .l4 { animation-delay: -4.77s; }
+    .l5 { animation-delay: -3.27s; }
+    .l6 { animation-delay: -1.77s; }
+
+    .spine-active {
+      stroke-dasharray: 405;
+      stroke-dashoffset: 405;
+      animation: spineTrace 9s infinite ease-in-out;
+    }
+
+    .packet-dot {
+      animation: packetFlow 9s infinite ease-in-out;
+    }
+
+    .flow-pulse {
+      animation: flowTagPulse 3s infinite ease-in-out;
+    }
   </style>
   <filter id="greenCardGlow" x="-10%" y="-10%" width="120%" height="120%">
     <feDropShadow dx="0" dy="0" stdDeviation="4.5" flood-color="#39D353" flood-opacity="0.35"/>
   </filter>
+  <filter id="packetGlow" x="-100%" y="-100%" width="300%" height="300%">
+    <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#39D353" flood-opacity="0.85"/>
+  </filter>
 </defs>
+
 <rect width="1040" height="590" fill="#0D1117" rx="12"/>
 <text x="40" y="48" class="heading">One engineer, every layer of a distributed system</text>
-<text x="1000" y="46" class="flow-tag" text-anchor="end">&#x2193; request &#160;&#160;&#160; &#x2191; state</text>
+<text x="1000" y="46" class="flow-tag flow-pulse" text-anchor="end">&#x2193; request &#160;&#160;&#160; &#x2191; state</text>
+
+<!-- Pipeline vertical track -->
 <line x1="42" y1="120" x2="42" y2="525" stroke="#30363D" stroke-width="1.5"/>
+<line x1="42" y1="120" x2="42" y2="525" stroke="#39D353" stroke-width="2" class="spine-active"/>
+
+<!-- Base (inactive) layers -->
+<!-- Layer 01 -->
+<line x1="47" y1="120" x2="70" y2="120" stroke="#30363D" stroke-width="1"/>
 <rect x="38" y="116" width="8" height="8" rx="1" fill="#0D1117" stroke="#30363D" stroke-width="1.5"/>
 <rect x="70" y="86" width="930" height="68" rx="6" fill="#161B22" stroke="#30363D" stroke-width="1"/>
 <rect x="82" y="102" width="3" height="36" rx="1.5" fill="#26A641"/>
 <text x="94" y="113" class="layer-tag" fill="#39D353">01&#160;&#160;INTERFACE</text>
-<text x="94" y="135" class="tech-stack" fill="#C9D1D9">React · Next.js · TypeScript · Tailwind CSS · React Native</text>
-<text x="630" y="113" class="applied-lbl">APPLIED IN</text>
-<text x="630" y="135" class="applied-val" fill="#8B949E">CodVidya · NijiSamvad · Planrova</text>
+<text x="94" y="135" class="tech-stack" fill="#C9D1D9">React &#183; Next.js &#183; TypeScript &#183; Tailwind CSS &#183; React Native</text>
+<text x="630" y="113" class="applied-lbl" fill="#8B949E">APPLIED IN</text>
+<text x="630" y="135" class="applied-val" fill="#8B949E">CodVidya &#183; NijiSamvad &#183; Planrova</text>
+
+<!-- Layer 02 -->
+<line x1="47" y1="201" x2="70" y2="201" stroke="#30363D" stroke-width="1"/>
 <rect x="38" y="197" width="8" height="8" rx="1" fill="#0D1117" stroke="#30363D" stroke-width="1.5"/>
 <rect x="70" y="167" width="930" height="68" rx="6" fill="#161B22" stroke="#30363D" stroke-width="1"/>
 <rect x="82" y="183" width="3" height="36" rx="1.5" fill="#26A641"/>
 <text x="94" y="194" class="layer-tag" fill="#39D353">02&#160;&#160;API</text>
-<text x="94" y="216" class="tech-stack" fill="#C9D1D9">Node.js · Express · NestJS · REST APIs · Prisma ORM</text>
-<text x="630" y="194" class="applied-lbl">APPLIED IN</text>
-<text x="630" y="216" class="applied-val" fill="#8B949E">CodVidya · DropX · NijiSamvad</text>
-<circle cx="42" cy="268" r="2" fill="#39D353"/>
-<rect x="37" y="277" width="10" height="10" rx="1.5" fill="#39D353" stroke="#39D353" stroke-width="1.5"/>
-<circle cx="42" cy="296" r="2" fill="#39D353"/>
-<line x1="47" y1="282" x2="70" y2="282" stroke="#39D353" stroke-width="1.5"/>
-<rect x="70" y="248" width="930" height="68" rx="6" fill="#0D2218" stroke="#39D353" stroke-width="1.5" filter="url(#greenCardGlow)"/>
-<rect x="82" y="264" width="3" height="36" rx="1.5" fill="#39D353"/>
+<text x="94" y="216" class="tech-stack" fill="#C9D1D9">Node.js &#183; Express &#183; NestJS &#183; REST APIs &#183; Prisma ORM</text>
+<text x="630" y="194" class="applied-lbl" fill="#8B949E">APPLIED IN</text>
+<text x="630" y="216" class="applied-val" fill="#8B949E">CodVidya &#183; DropX &#183; NijiSamvad</text>
+
+<!-- Layer 03 -->
+<line x1="47" y1="282" x2="70" y2="282" stroke="#30363D" stroke-width="1"/>
+<rect x="38" y="278" width="8" height="8" rx="1" fill="#0D1117" stroke="#30363D" stroke-width="1.5"/>
+<rect x="70" y="248" width="930" height="68" rx="6" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+<rect x="82" y="264" width="3" height="36" rx="1.5" fill="#26A641"/>
 <text x="94" y="275" class="layer-tag" fill="#39D353">03&#160;&#160;ASYNC PROCESSING</text>
-<text x="94" y="297" class="tech-stack" fill="#F0F6FC">RabbitMQ · Worker Queues · AMQP · Rootless Podman</text>
-<text x="630" y="275" class="applied-lbl">APPLIED IN</text>
-<text x="630" y="297" class="applied-val" fill="#F0F6FC">CodVidya</text>
+<text x="94" y="297" class="tech-stack" fill="#C9D1D9">RabbitMQ &#183; Worker Queues &#183; AMQP &#183; Rootless Podman</text>
+<text x="630" y="275" class="applied-lbl" fill="#8B949E">APPLIED IN</text>
+<text x="630" y="297" class="applied-val" fill="#8B949E">CodVidya</text>
+
+<!-- Layer 04 -->
+<line x1="47" y1="363" x2="70" y2="363" stroke="#30363D" stroke-width="1"/>
 <rect x="38" y="359" width="8" height="8" rx="1" fill="#0D1117" stroke="#30363D" stroke-width="1.5"/>
 <rect x="70" y="329" width="930" height="68" rx="6" fill="#161B22" stroke="#30363D" stroke-width="1"/>
 <rect x="82" y="345" width="3" height="36" rx="1.5" fill="#26A641"/>
 <text x="94" y="356" class="layer-tag" fill="#39D353">04&#160;&#160;REAL-TIME &amp; SECURITY</text>
-<text x="94" y="378" class="tech-stack" fill="#C9D1D9">Socket.IO · WebRTC · AES-256-GCM · Web Crypto API</text>
-<text x="630" y="356" class="applied-lbl">APPLIED IN</text>
-<text x="630" y="378" class="applied-val" fill="#8B949E">NijiSamvad · DropX</text>
+<text x="94" y="378" class="tech-stack" fill="#C9D1D9">Socket.IO &#183; WebRTC &#183; AES-256-GCM &#183; Web Crypto API</text>
+<text x="630" y="356" class="applied-lbl" fill="#8B949E">APPLIED IN</text>
+<text x="630" y="378" class="applied-val" fill="#8B949E">NijiSamvad &#183; DropX</text>
+
+<!-- Layer 05 -->
+<line x1="47" y1="444" x2="70" y2="444" stroke="#30363D" stroke-width="1"/>
 <rect x="38" y="440" width="8" height="8" rx="1" fill="#0D1117" stroke="#30363D" stroke-width="1.5"/>
 <rect x="70" y="410" width="930" height="68" rx="6" fill="#161B22" stroke="#30363D" stroke-width="1"/>
 <rect x="82" y="426" width="3" height="36" rx="1.5" fill="#26A641"/>
 <text x="94" y="437" class="layer-tag" fill="#39D353">05&#160;&#160;DATA &amp; STORAGE</text>
-<text x="94" y="459" class="tech-stack" fill="#C9D1D9">PostgreSQL · Redis · MongoDB · SQLite · Firebase Firestore</text>
-<text x="630" y="437" class="applied-lbl">APPLIED IN</text>
-<text x="630" y="459" class="applied-val" fill="#8B949E">CodVidya · DropX · Planrova · Sanjeevni AI</text>
+<text x="94" y="459" class="tech-stack" fill="#C9D1D9">PostgreSQL &#183; Redis &#183; MongoDB &#183; SQLite &#183; Firebase Firestore</text>
+<text x="630" y="437" class="applied-lbl" fill="#8B949E">APPLIED IN</text>
+<text x="630" y="459" class="applied-val" fill="#8B949E">CodVidya &#183; DropX &#183; Planrova &#183; Sanjeevni AI</text>
+
+<!-- Layer 06 -->
+<line x1="47" y1="525" x2="70" y2="525" stroke="#30363D" stroke-width="1"/>
 <rect x="38" y="521" width="8" height="8" rx="1" fill="#0D1117" stroke="#30363D" stroke-width="1.5"/>
 <rect x="70" y="491" width="930" height="68" rx="6" fill="#161B22" stroke="#30363D" stroke-width="1"/>
 <rect x="82" y="507" width="3" height="36" rx="1.5" fill="#26A641"/>
 <text x="94" y="518" class="layer-tag" fill="#39D353">06&#160;&#160;CLOUD &amp; AI</text>
-<text x="94" y="540" class="tech-stack" fill="#C9D1D9">AWS · Docker · Terraform · Linux · Groq Vision · Three.js</text>
-<text x="630" y="518" class="applied-lbl">APPLIED IN</text>
-<text x="630" y="540" class="applied-val" fill="#8B949E">Planrova · Sanjeevni AI · Infrastructure projects</text>
+<text x="94" y="540" class="tech-stack" fill="#C9D1D9">AWS &#183; Docker &#183; Terraform &#183; Linux &#183; Groq Vision &#183; Three.js</text>
+<text x="630" y="518" class="applied-lbl" fill="#8B949E">APPLIED IN</text>
+<text x="630" y="540" class="applied-val" fill="#8B949E">Planrova &#183; Sanjeevni AI &#183; Infrastructure projects</text>
+
+<!-- Active animated overlays per layer -->
+<!-- Active Layer 01 -->
+<g class="layer-active l1">
+  <circle cx="42" cy="106" r="2" fill="#39D353"/>
+  <rect x="37" y="115" width="10" height="10" rx="1.5" fill="#39D353" stroke="#39D353" stroke-width="1.5"/>
+  <circle cx="42" cy="134" r="2" fill="#39D353"/>
+  <line x1="47" y1="120" x2="70" y2="120" stroke="#39D353" stroke-width="1.5"/>
+  <rect x="70" y="86" width="930" height="68" rx="6" fill="#0D2218" stroke="#39D353" stroke-width="1.5" filter="url(#greenCardGlow)"/>
+  <rect x="82" y="102" width="3" height="36" rx="1.5" fill="#39D353"/>
+  <text x="94" y="113" class="layer-tag" fill="#39D353">01&#160;&#160;INTERFACE</text>
+  <text x="94" y="135" class="tech-stack" fill="#F0F6FC">React &#183; Next.js &#183; TypeScript &#183; Tailwind CSS &#183; React Native</text>
+  <text x="630" y="113" class="applied-lbl" fill="#A5D6A7">APPLIED IN</text>
+  <text x="630" y="135" class="applied-val" fill="#F0F6FC">CodVidya &#183; NijiSamvad &#183; Planrova</text>
+</g>
+
+<!-- Active Layer 02 -->
+<g class="layer-active l2">
+  <circle cx="42" cy="187" r="2" fill="#39D353"/>
+  <rect x="37" y="196" width="10" height="10" rx="1.5" fill="#39D353" stroke="#39D353" stroke-width="1.5"/>
+  <circle cx="42" cy="215" r="2" fill="#39D353"/>
+  <line x1="47" y1="201" x2="70" y2="201" stroke="#39D353" stroke-width="1.5"/>
+  <rect x="70" y="167" width="930" height="68" rx="6" fill="#0D2218" stroke="#39D353" stroke-width="1.5" filter="url(#greenCardGlow)"/>
+  <rect x="82" y="183" width="3" height="36" rx="1.5" fill="#39D353"/>
+  <text x="94" y="194" class="layer-tag" fill="#39D353">02&#160;&#160;API</text>
+  <text x="94" y="216" class="tech-stack" fill="#F0F6FC">Node.js &#183; Express &#183; NestJS &#183; REST APIs &#183; Prisma ORM</text>
+  <text x="630" y="194" class="applied-lbl" fill="#A5D6A7">APPLIED IN</text>
+  <text x="630" y="216" class="applied-val" fill="#F0F6FC">CodVidya &#183; DropX &#183; NijiSamvad</text>
+</g>
+
+<!-- Active Layer 03 -->
+<g class="layer-active l3">
+  <circle cx="42" cy="268" r="2" fill="#39D353"/>
+  <rect x="37" y="277" width="10" height="10" rx="1.5" fill="#39D353" stroke="#39D353" stroke-width="1.5"/>
+  <circle cx="42" cy="296" r="2" fill="#39D353"/>
+  <line x1="47" y1="282" x2="70" y2="282" stroke="#39D353" stroke-width="1.5"/>
+  <rect x="70" y="248" width="930" height="68" rx="6" fill="#0D2218" stroke="#39D353" stroke-width="1.5" filter="url(#greenCardGlow)"/>
+  <rect x="82" y="264" width="3" height="36" rx="1.5" fill="#39D353"/>
+  <text x="94" y="275" class="layer-tag" fill="#39D353">03&#160;&#160;ASYNC PROCESSING</text>
+  <text x="94" y="297" class="tech-stack" fill="#F0F6FC">RabbitMQ &#183; Worker Queues &#183; AMQP &#183; Rootless Podman</text>
+  <text x="630" y="275" class="applied-lbl" fill="#A5D6A7">APPLIED IN</text>
+  <text x="630" y="297" class="applied-val" fill="#F0F6FC">CodVidya</text>
+</g>
+
+<!-- Active Layer 04 -->
+<g class="layer-active l4">
+  <circle cx="42" cy="349" r="2" fill="#39D353"/>
+  <rect x="37" y="358" width="10" height="10" rx="1.5" fill="#39D353" stroke="#39D353" stroke-width="1.5"/>
+  <circle cx="42" cy="377" r="2" fill="#39D353"/>
+  <line x1="47" y1="363" x2="70" y2="363" stroke="#39D353" stroke-width="1.5"/>
+  <rect x="70" y="329" width="930" height="68" rx="6" fill="#0D2218" stroke="#39D353" stroke-width="1.5" filter="url(#greenCardGlow)"/>
+  <rect x="82" y="345" width="3" height="36" rx="1.5" fill="#39D353"/>
+  <text x="94" y="356" class="layer-tag" fill="#39D353">04&#160;&#160;REAL-TIME &amp; SECURITY</text>
+  <text x="94" y="378" class="tech-stack" fill="#F0F6FC">Socket.IO &#183; WebRTC &#183; AES-256-GCM &#183; Web Crypto API</text>
+  <text x="630" y="356" class="applied-lbl" fill="#A5D6A7">APPLIED IN</text>
+  <text x="630" y="378" class="applied-val" fill="#F0F6FC">NijiSamvad &#183; DropX</text>
+</g>
+
+<!-- Active Layer 05 -->
+<g class="layer-active l5">
+  <circle cx="42" cy="430" r="2" fill="#39D353"/>
+  <rect x="37" y="439" width="10" height="10" rx="1.5" fill="#39D353" stroke="#39D353" stroke-width="1.5"/>
+  <circle cx="42" cy="458" r="2" fill="#39D353"/>
+  <line x1="47" y1="444" x2="70" y2="444" stroke="#39D353" stroke-width="1.5"/>
+  <rect x="70" y="410" width="930" height="68" rx="6" fill="#0D2218" stroke="#39D353" stroke-width="1.5" filter="url(#greenCardGlow)"/>
+  <rect x="82" y="426" width="3" height="36" rx="1.5" fill="#39D353"/>
+  <text x="94" y="437" class="layer-tag" fill="#39D353">05&#160;&#160;DATA &amp; STORAGE</text>
+  <text x="94" y="459" class="tech-stack" fill="#F0F6FC">PostgreSQL &#183; Redis &#183; MongoDB &#183; SQLite &#183; Firebase Firestore</text>
+  <text x="630" y="437" class="applied-lbl" fill="#A5D6A7">APPLIED IN</text>
+  <text x="630" y="459" class="applied-val" fill="#F0F6FC">CodVidya &#183; DropX &#183; Planrova &#183; Sanjeevni AI</text>
+</g>
+
+<!-- Active Layer 06 -->
+<g class="layer-active l6">
+  <circle cx="42" cy="511" r="2" fill="#39D353"/>
+  <rect x="37" y="520" width="10" height="10" rx="1.5" fill="#39D353" stroke="#39D353" stroke-width="1.5"/>
+  <circle cx="42" cy="539" r="2" fill="#39D353"/>
+  <line x1="47" y1="525" x2="70" y2="525" stroke="#39D353" stroke-width="1.5"/>
+  <rect x="70" y="491" width="930" height="68" rx="6" fill="#0D2218" stroke="#39D353" stroke-width="1.5" filter="url(#greenCardGlow)"/>
+  <rect x="82" y="507" width="3" height="36" rx="1.5" fill="#39D353"/>
+  <text x="94" y="518" class="layer-tag" fill="#39D353">06&#160;&#160;CLOUD &amp; AI</text>
+  <text x="94" y="540" class="tech-stack" fill="#F0F6FC">AWS &#183; Docker &#183; Terraform &#183; Linux &#183; Groq Vision &#183; Three.js</text>
+  <text x="630" y="518" class="applied-lbl" fill="#A5D6A7">APPLIED IN</text>
+  <text x="630" y="540" class="applied-val" fill="#F0F6FC">Planrova &#183; Sanjeevni AI &#183; Infrastructure projects</text>
+</g>
+
+<!-- Traveling pipeline signal dot -->
+<g class="packet-dot">
+  <circle cx="42" cy="120" r="4" fill="#56D364" filter="url(#packetGlow)"/>
+  <circle cx="42" cy="120" r="2" fill="#F0F6FC"/>
+</g>
 </svg>
