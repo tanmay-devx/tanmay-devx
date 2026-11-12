@@ -64,6 +64,12 @@
 
 `NestJS` `TypeScript` `RabbitMQ` `Podman` `PostgreSQL` `Prisma`
 
+<p>
+  <a href="https://github.com/tanmay-devx/Coditorium" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub_Repo-181717?style=flat-square&logo=github&logoColor=white" alt="CodVidya GitHub Repo"/>
+  </a>
+</p>
+
 </td>
 <td width="50%" valign="top">
 
@@ -75,6 +81,16 @@
 - Direct peer-to-peer audio/video streaming over WebRTC mesh.
 
 `React` `Node.js` `Socket.IO` `WebRTC` `Web Crypto API`
+
+<p>
+  <a href="https://niji-samvad.vercel.app/" target="_blank">
+    <img src="https://img.shields.io/badge/Live_Demo-238636?style=flat-square&logo=vercel&logoColor=white" alt="NijiSamvad Live Demo"/>
+  </a>
+  &nbsp;
+  <a href="https://github.com/tanmay-devx/NijiSamvad" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub_Repo-181717?style=flat-square&logo=github&logoColor=white" alt="NijiSamvad GitHub Repo"/>
+  </a>
+</p>
 
 </td>
 </tr>
@@ -90,6 +106,16 @@
 
 `Node.js` `Express.js` `Redis` `Socket.IO` `React`
 
+<p>
+  <a href="https://dropxio.vercel.app/" target="_blank">
+    <img src="https://img.shields.io/badge/Live_Demo-238636?style=flat-square&logo=vercel&logoColor=white" alt="DropX Live Demo"/>
+  </a>
+  &nbsp;
+  <a href="https://github.com/tanmay-devx/dropx" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub_Repo-181717?style=flat-square&logo=github&logoColor=white" alt="DropX GitHub Repo"/>
+  </a>
+</p>
+
 </td>
 <td width="50%" valign="top">
 
@@ -101,6 +127,16 @@
 - Multimodal Groq Vision OCR pipeline for study note digitization.
 
 `React Native` `Expo` `Kotlin` `Firestore` `Groq API`
+
+<p>
+  <a href="https://planrova.vercel.app/" target="_blank">
+    <img src="https://img.shields.io/badge/Live_Demo-238636?style=flat-square&logo=vercel&logoColor=white" alt="Planrova Live Demo"/>
+  </a>
+  &nbsp;
+  <a href="https://github.com/tanmay-devx/planrova" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub_Repo-181717?style=flat-square&logo=github&logoColor=white" alt="Planrova GitHub Repo"/>
+  </a>
+</p>
 
 </td>
 </tr>
@@ -115,6 +151,16 @@
 - Multilingual speech recognition (Hindi / Hinglish / English) with Groq LLaMA clinical summaries.
 
 `React 18` `Three.js` `Node.js` `SQLite` `Groq LLaMA`
+
+<p>
+  <a href="https://sanjeevniai.vercel.app/" target="_blank">
+    <img src="https://img.shields.io/badge/Live_Demo-238636?style=flat-square&logo=vercel&logoColor=white" alt="Sanjeevni AI Live Demo"/>
+  </a>
+  &nbsp;
+  <a href="https://github.com/tanmay-devx/Sanjeevni-AI" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub_Repo-181717?style=flat-square&logo=github&logoColor=white" alt="Sanjeevni AI GitHub Repo"/>
+  </a>
+</p>
 
 </td>
 </tr>
