@@ -1,6 +1,6 @@
 # Final Technical Accuracy & Presentation Audit Report
 
-**Repository:** [`tanmay9783/tanmay9783`](https://github.com/tanmay9783/tanmay9783)  
+**Repository:** [`tanmay-devx/tanmay-devx`](https://github.com/tanmay-devx/tanmay-devx)  
 **Candidate:** Tanmay Agrawal  
 **Audit Scope:** Final Accuracy, Presentation & Defensibility Audit  
 **Date of Audit:** October 2026  

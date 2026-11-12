@@ -1,7 +1,7 @@
 <!-- =========================================================
      TANMAY AGRAWAL | GITHUB PROFILE README
      Backend Systems & Distributed Architecture
-     Repository: tanmay9783/tanmay9783
+     Repository: tanmay-devx/tanmay-devx
 ========================================================== -->
 
 <div align="center">
@@ -17,8 +17,7 @@
   </a>
   &nbsp;
   <a href="https://www.linkedin.com/in/tanmaydevx/" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-tanmaydevx
-     -0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+    <img src="https://img.shields.io/badge/LinkedIn-tanmaydevx-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"/>
   </a>
   &nbsp;
   <a href="mailto:tanmayagrawal.dev@gmail.com">
@@ -30,7 +29,7 @@
   </a>
   &nbsp;
   <a href="https://github.com/tanmay-devx">
-    <img src="https://img.shields.io/badge/GitHub-tanmay-devx-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub"/>
+    <img src="https://img.shields.io/badge/GitHub-tanmay--devx-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub"/>
   </a>
 </p>
 
@@ -55,7 +54,7 @@
 <tr>
 <td width="50%" valign="top">
 
-### 01. [CodVidya — Distributed Code Judge](https://github.com/tanmay9783/Coditorium)
+### 01. [CodVidya — Distributed Code Judge](https://github.com/tanmay-devx/Coditorium)
 *Asynchronous execution engine and evaluation platform.*
 
 - Decoupled judge pipeline handling concurrent student submissions via RabbitMQ.
@@ -67,7 +66,7 @@
 </td>
 <td width="50%" valign="top">
 
-### 02. [NijiSamvad — Encrypted Real-Time Mesh](https://github.com/tanmay9783/NijiSamvad)
+### 02. [NijiSamvad — Encrypted Real-Time Mesh](https://github.com/tanmay-devx/NijiSamvad)
 *Zero-knowledge communication and P2P WebRTC platform.*
 
 - Client-side AES-256-GCM encryption with PBKDF2 (100k iterations) key derivation.
@@ -81,7 +80,7 @@
 <tr>
 <td width="50%" valign="top">
 
-### 03. [DropX — Ephemeral Data Exchange](https://github.com/tanmay9783/dropx)
+### 03. [DropX — Ephemeral Data Exchange](https://github.com/tanmay-devx/dropx)
 *Accountless temporary cross-device file sharing platform.*
 
 - Session synchronization and automated TTL data cleanup backed by Redis.
@@ -93,7 +92,7 @@
 </td>
 <td width="50%" valign="top">
 
-### 04. [Planrova — Local-First Study System](https://github.com/tanmay9783/planrova)
+### 04. [Planrova — Local-First Study System](https://github.com/tanmay-devx/planrova)
 *Offline-capable academic productivity ecosystem.*
 
 - Custom Android Kotlin `AlarmManager` bridge (`setAlarmClock()`) bypassing OS Doze limits.
@@ -107,7 +106,7 @@
 <tr>
 <td colspan="2" valign="top">
 
-### 05. [Sanjeevni AI — Multimodal Intake Kiosk](https://github.com/tanmay9783/Sanjeevni-AI)
+### 05. [Sanjeevni AI — Multimodal Intake Kiosk](https://github.com/tanmay-devx/Sanjeevni-AI)
 *AI-assisted clinic intake kiosk with 3D interaction and localized edge storage.*
 
 - Edge-deployed SQLite (`better-sqlite3`) persisting intake logs during network dropouts.
@@ -213,10 +212,10 @@ Demonstrated proficiency in large language model architectures and cloud-hosted 
 </tr>
 <tr>
   <td width="50%" align="center">
-    <img src="https://streak-stats.demolab.com/?user=tanmay9783&theme=tokyonight&hide_border=true&background=0D1117&ring=58A6FF&fire=FF9900&currStreakLabel=58A6FF" width="100%" alt="GitHub Streak"/>
+    <img src="https://streak-stats.demolab.com/?user=tanmay-devx&theme=tokyonight&hide_border=true&background=0D1117&ring=58A6FF&fire=FF9900&currStreakLabel=58A6FF" width="100%" alt="GitHub Streak"/>
   </td>
   <td width="50%" align="center">
-    <img src="https://github-readme-stats-eight-theta.vercel.app/api?username=tanmay9783&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58A6FF&icon_color=58A6FF&text_color=C9D1D9" width="100%" alt="GitHub Stats"/>
+    <img src="https://github-readme-stats-eight-theta.vercel.app/api?username=tanmay-devx&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58A6FF&icon_color=58A6FF&text_color=C9D1D9" width="100%" alt="GitHub Stats"/>
   </td>
 </tr>
 </table>
@@ -233,9 +232,9 @@ Demonstrated proficiency in large language model architectures and cloud-hosted 
 
 <p align="center">
   <a href="https://tanmaydevs.vercel.app"><b>Portfolio Website</b></a> &bull;
-  <a href="https://www.linkedin.com/in/tanmay041/"><b>LinkedIn</b></a> &bull;
-  <a href="mailto:tanmayag041@gmail.com"><b>tanmayag041@gmail.com</b></a> &bull;
-  <a href="https://github.com/tanmay9783"><b>GitHub</b></a>
+  <a href="https://www.linkedin.com/in/tanmaydevx/"><b>LinkedIn</b></a> &bull;
+  <a href="mailto:tanmayagrawal.dev@gmail.com"><b>tanmayagrawal.dev@gmail.com</b></a> &bull;
+  <a href="https://github.com/tanmay-devx"><b>GitHub</b></a>
 </p>
 
 ```

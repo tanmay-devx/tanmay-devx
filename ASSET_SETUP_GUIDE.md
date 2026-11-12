@@ -1,6 +1,6 @@
 # Asset & External Services Setup Guide
 
-This guide provides technical specifications, operational status, and deployment instructions for all external visual services, animated badges, and GitHub Actions workflows integrated into Tanmay Agrawal's GitHub profile (`tanmay9783`).
+This guide provides technical specifications, operational status, and deployment instructions for all external visual services, animated badges, and GitHub Actions workflows integrated into Tanmay Agrawal's GitHub profile (`tanmay-devx`).
 
 ---
 
@@ -10,8 +10,8 @@ This guide provides technical specifications, operational status, and deployment
 | :--- | :--- | :--- | :--- |
 | **Readme Typing SVG** | Dynamic animated header typing title | `https://readme-typing-svg.demolab.com` | Verified 200 OK. Hosted on high-availability demolab edge. |
 | **SkillIcons.dev** | High-definition dark-mode tech stack icons | `https://skillicons.dev/icons?i=...` | Verified 200 OK. Cached globally via Cloudflare CDN. |
-| **GitHub Readme Streak Stats** | Live streak and contribution consistency tracker | `https://streak-stats.demolab.com/?user=tanmay9783` | Verified 200 OK. Official demolab production deployment. |
-| **GitHub Readme Stats & Top Langs** | Aggregated repository stars, commits, and language ratios | `https://github-readme-stats-eight-theta.vercel.app/api?username=tanmay9783` | Verified 200 OK. Configured with `#0D1117` GitHub dark theme matching. |
+| **GitHub Readme Streak Stats** | Live streak and contribution consistency tracker | `https://streak-stats.demolab.com/?user=tanmay-devx` | Verified 200 OK. Official demolab production deployment. |
+| **GitHub Readme Stats & Top Langs** | Aggregated repository stars, commits, and language ratios | `https://github-readme-stats-eight-theta.vercel.app/api?username=tanmay-devx` | Verified 200 OK. Configured with `#0D1117` GitHub dark theme matching. |
 | **LeetCode Card (JacobLin)** | Real-time LeetCode problem solving metrics | `https://leetcard.jacoblin.cool/tanmay041?theme=dark` | Verified 200 OK. Dark theme with problem distribution. |
 | **Codeforces Stats Card** | Live contest rating and rank visualization | `https://codeforces-readme-stats.vercel.app/api/card?username=tanmay0412` | Verified 200 OK. Tokyonight theme with dark background. |
 | **Shields.io** | Clean action buttons and contact links | `https://img.shields.io/badge/...` | High-reliability global badge CDN. |
@@ -32,7 +32,7 @@ The workflow configuration is committed at:
 ### Step 2: Enable Workflow Write Permissions
 GitHub Actions needs permission to push the generated SVGs to your repository's `output` branch.
 
-1. Navigate to your repository on GitHub: `https://github.com/tanmay9783/tanmay9783`
+1. Navigate to your repository on GitHub: `https://github.com/tanmay-devx/tanmay-devx`
 2. Click **Settings** (top navigation bar of the repository).
 3. On the left sidebar, click **Actions** ➔ **General**.
 4. Scroll down to **Workflow permissions**.
@@ -41,7 +41,7 @@ GitHub Actions needs permission to push the generated SVGs to your repository's 
 7. Click **Save**.
 
 ### Step 3: Trigger the First Run Manually
-1. Navigate to the **Actions** tab on `tanmay9783/tanmay9783`.
+1. Navigate to the **Actions** tab on `tanmay-devx/tanmay-devx`.
 2. In the left sidebar, click **"Generate Contribution Snake Animation"**.
 3. Click the **Run workflow** dropdown on the right side and click the green **Run workflow** button.
 4. Once completed (typically ~30 seconds), a new orphan branch named `output` will be created automatically containing:
@@ -74,11 +74,11 @@ To run your own private instance with your personal GitHub rate limit:
 
 ## 4. GitHub Profile Metadata Recommendation
 
-To maximize recruiter discoverability on GitHub, configure the repository metadata on [github.com/tanmay9783/tanmay9783](https://github.com/tanmay9783/tanmay9783):
+To maximize recruiter discoverability on GitHub, configure the repository metadata on [github.com/tanmay-devx/tanmay-devx](https://github.com/tanmay-devx/tanmay-devx):
 
 - **About Description:**
   `Full-Stack Developer & Software Engineer | Backend Engineering, Distributed Systems & Cloud Infrastructure`
 - **Website URL:**
-  `https://github.com/tanmay9783/portfolio`
+  `https://github.com/tanmay-devx/portfolio`
 - **Topics (Tags):**
   `full-stack`, `backend`, `distributed-systems`, `system-design`, `nestjs`, `rabbitmq`, `podman`, `webrtc`, `cryptography`, `terraform`, `aws`
