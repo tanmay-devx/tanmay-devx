@@ -7,13 +7,13 @@
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=venom&height=165&text=Tanmay%20Agrawal&fontSize=46&fontColor=39D353&stroke=39D353&strokeWidth=1&animation=fadeIn&desc=Software%20Engineer%20%7C%20Backend%20%C2%B7%20Full-Stack%20%C2%B7%20Cloud&descSize=15&descAlignY=68&color=0:0D1117,100:161B22" width="100%" alt="Tanmay Agrawal Banner"/>
+<img src="https://capsule-render.vercel.app/api?type=venom&height=165&text=Tanmay%20Agrawal&fontSize=46&fontColor=58A6FF&stroke=58A6FF&strokeWidth=1&animation=fadeIn&desc=Software%20Engineer%20%7C%20Backend%20%C2%B7%20Full-Stack%20%C2%B7%20Cloud&descSize=15&descAlignY=68&color=0:0D1117,100:161B22" width="100%" alt="Tanmay Agrawal Banner"/>
 
 *Engineering scalable backend systems, distributed architectures, and reliable software products.*
 
 <p align="center">
   <a href="https://tanmaydev.in" target="_blank">
-    <img src="https://img.shields.io/badge/Portfolio-tanmaydev.in-238636?style=flat-square&logo=vercel&logoColor=white" alt="Portfolio"/>
+    <img src="https://img.shields.io/badge/Portfolio-tanmaydev.in-58A6FF?style=flat-square&logo=vercel&logoColor=white" alt="Portfolio"/>
   </a>
   &nbsp;
   <a href="https://www.linkedin.com/in/tanmayagrawaldev" target="_blank">
@@ -29,7 +29,7 @@
   </a>
 </p>
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=15&duration=2800&pause=1000&color=39D353&center=true&vCenter=true&width=700&lines=Building+asynchronous+execution+pipelines+with+RabbitMQ.;Sandboxing+untrusted+code+with+Rootless+Podman.;Architecting+defensive%2C+fault-tolerant+backend+services.;Building+cloud-native+applications+with+AWS+and+Terraform." alt="Typing SVG"/>
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=15&duration=2800&pause=1000&color=58A6FF&center=true&vCenter=true&width=700&lines=Building+asynchronous+execution+pipelines+with+RabbitMQ.;Sandboxing+untrusted+code+with+Rootless+Podman.;Architecting+defensive%2C+fault-tolerant+backend+services.;Building+cloud-native+applications+with+AWS+and+Terraform." alt="Typing SVG"/>
 
 </div>
 

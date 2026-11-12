@@ -245,7 +245,7 @@ def render_streak_svg(streaks: dict, created_label: str, synced_tag: str) -> str
 
     return "\n".join(
         [
-            '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 495 195" width="100%" height="100%">',
+            '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 495 195" width="495" height="195">',
             "<defs>",
             "  <style>",
             '    .st-big { font-family: "Segoe UI", Ubuntu, -apple-system, sans-serif; font-size: 28px; font-weight: 700; fill: #39D353; }',
@@ -322,7 +322,7 @@ def render_github_stats_svg(gh: dict, synced_tag: str) -> str:
 
     return "\n".join(
         [
-            '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 495 195" width="100%" height="100%">',
+            '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 495 195" width="495" height="195">',
             "<defs>",
             "  <style>",
             '    .gh-title { font-family: "Segoe UI", Ubuntu, -apple-system, sans-serif; font-size: 17px; font-weight: 700; fill: #39D353; }',
@@ -401,7 +401,7 @@ def render_languages_svg(lang_totals: dict[str, int], synced_tag: str) -> str:
 
     return "\n".join(
         [
-            '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 495 195" width="100%" height="100%">',
+            '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 495 195" width="495" height="195">',
             "<defs>",
             "  <style>",
             '    .lg-title { font-family: "Segoe UI", Ubuntu, -apple-system, sans-serif; font-size: 17px; font-weight: 700; fill: #39D353; }',
