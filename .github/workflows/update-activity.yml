@@ -2,15 +2,18 @@ name: Sync GitHub 3D Activity & Profile Stats
 
 on:
   schedule:
-    # Sync every hour automatically
-    - cron: "0 * * * *"
+    # Real-time automated sync every 30 minutes
+    - cron: "0,30 * * * *"
   workflow_dispatch:
+  repository_dispatch:
+    types: [sync-stats, git-push, ping]
   push:
     branches:
       - main
-    paths:
-      - "scripts/**"
-      - ".github/workflows/update-activity.yml"
+
+concurrency:
+  group: stats-sync
+  cancel-in-progress: true
 
 permissions:
   contents: write
@@ -52,5 +55,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add assets/
-          git commit -m "chore: sync live GitHub, LeetCode & Codeforces stats"
+          git commit -m "chore: real-time sync GitHub, LeetCode & profile stats [skip ci]"
           git push --force "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git" stats-output

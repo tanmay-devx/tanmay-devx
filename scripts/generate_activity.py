@@ -231,7 +231,7 @@ def render_svg(weeks: list[list[dict]], stats: dict[str, int], synced_label: str
     best_day = max(1, stats["best_day"])
 
     lines = [
-        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 480" width="100%" height="100%">',
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 480" width="1040" height="480">',
         "<defs>",
         "  <style>",
         '    .serif-title { font-family: Georgia, "Times New Roman", serif; font-size: 29px; fill: #F0F6FC; font-weight: normal; }',
@@ -257,10 +257,11 @@ def render_svg(weeks: list[list[dict]], stats: dict[str, int], synced_label: str
         '<text x="45" y="38" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" font-weight="bold" fill="#39D353">06</text>',
         '<text x="75" y="38" class="serif-title">Activity</text>',
         '<line x1="45" y1="47" x2="95" y2="47" stroke="#39D353" stroke-width="2"/>',
-        '<text x="995" y="38" class="mono-tag" text-anchor="end">auto-synced from GitHub</text>',
+        '<circle cx="770" cy="34" r="4" fill="#39D353"><animate attributeName="opacity" values="1;0.25;1" dur="2s" repeatCount="indefinite"/></circle>',
+        '<text x="995" y="38" class="mono-tag" text-anchor="end" fill="#39D353" font-weight="600">REAL-TIME SYNC · AUTO-UPDATED</text>',
         '<rect x="45" y="60" width="950" height="405" rx="10" fill="#11161D" stroke="#30363D" stroke-width="1.2"/>',
         '<text x="75" y="96" class="card-title">The last 52 weeks</text>',
-        f'<text x="965" y="92" class="mono-tag" text-anchor="end" fill="#6E7681">SYNCED {synced_label}</text>',
+        f'<text x="965" y="92" class="mono-tag" text-anchor="end" fill="#6E7681">LIVE SYNCED {synced_label}</text>',
         '<text x="812" y="116" class="mono-tag" text-anchor="end">less</text>',
         '<rect x="820" y="108" width="9" height="9" rx="1.5" fill="#161B22" stroke="#21262D" stroke-width="0.5"/>',
         '<rect x="834" y="108" width="9" height="9" rx="1.5" fill="#0E4429" stroke="#165935" stroke-width="0.5"/>',

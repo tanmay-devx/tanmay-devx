@@ -259,6 +259,14 @@ Reproducible AWS infrastructure (`EC2`, `S3`, `IAM`, `VPC`) provisioned declarat
   </a>
 </p>
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Sync_Engine-Real--Time_Automated-238636?style=flat-square&logo=githubactions&logoColor=white" alt="Real-Time Sync Engine"/>
+  &nbsp;
+  <img src="https://img.shields.io/badge/Cadence-Every_30m_%2B_On_Push-1F6FEB?style=flat-square&logo=clock&logoColor=white" alt="Cadence Every 30m + On Push"/>
+  &nbsp;
+  <img src="https://img.shields.io/badge/Live_Data-GitHub_%26_LeetCode-FFA116?style=flat-square&logo=graphql&logoColor=white" alt="Live Data Stream"/>
+</p>
+
 <table width="100%">
 <tr>
   <td width="50%" align="center">
