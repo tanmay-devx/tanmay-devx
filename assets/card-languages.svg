@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 495 195" width="495" height="195">
+<defs>
+  <style>
+    .lg-title { font-family: "Segoe UI", Ubuntu, -apple-system, sans-serif; font-size: 17px; font-weight: 700; fill: #39D353; }
+    .lg-name { font-family: "Segoe UI", Ubuntu, -apple-system, sans-serif; font-size: 13px; font-weight: 600; fill: #C9D1D9; }
+    .lg-pct { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px; font-weight: 600; fill: #8B949E; }
+    .lg-sync { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 9px; fill: #6E7681; }
+  </style>
+  <clipPath id="barClip"><rect x="24" y="58" width="447" height="10" rx="5"/></clipPath>
+</defs>
+<rect width="495" height="195" rx="8" fill="#0D1117" stroke="#30363D" stroke-width="1"/>
+<text x="24" y="34" class="lg-title">Most Used Languages</text>
+<circle cx="307" cy="21" r="3" fill="#39D353"><animate attributeName="opacity" values="1;0.25;1" dur="2s" repeatCount="indefinite"/></circle>
+<text x="471" y="24" class="lg-sync" text-anchor="end" fill="#39D353" font-weight="600">REAL-TIME SYNC · <tspan fill="#6E7681">14 NOV 2026</tspan></text>
+<g clip-path="url(#barClip)">
+<rect x="24.00" y="58" width="312.26" height="10" fill="#F1E05A"/>
+<rect x="336.26" y="58" width="52.30" height="10" fill="#3178C6"/>
+<rect x="388.56" y="58" width="35.96" height="10" fill="#E34C26"/>
+<rect x="424.52" y="58" width="31.33" height="10" fill="#563D7C"/>
+<rect x="455.84" y="58" width="7.14" height="10" fill="#A97BFF"/>
+<rect x="462.98" y="58" width="8.02" height="10" fill="#39D353"/>
+</g>
+<circle cx="29" cy="94" r="4.5" fill="#F1E05A"/><text x="42" y="98" class="lg-name">JavaScript</text><text x="229" y="98" class="lg-pct" text-anchor="end">69.9%</text>
+<circle cx="259" cy="94" r="4.5" fill="#3178C6"/><text x="272" y="98" class="lg-name">TypeScript</text><text x="459" y="98" class="lg-pct" text-anchor="end">11.7%</text>
+<circle cx="29" cy="124" r="4.5" fill="#E34C26"/><text x="42" y="128" class="lg-name">HTML</text><text x="229" y="128" class="lg-pct" text-anchor="end">8.0%</text>
+<circle cx="259" cy="124" r="4.5" fill="#563D7C"/><text x="272" y="128" class="lg-name">CSS</text><text x="459" y="128" class="lg-pct" text-anchor="end">7.0%</text>
+<circle cx="29" cy="154" r="4.5" fill="#A97BFF"/><text x="42" y="158" class="lg-name">Kotlin</text><text x="229" y="158" class="lg-pct" text-anchor="end">1.6%</text>
+<circle cx="259" cy="154" r="4.5" fill="#39D353"/><text x="272" y="158" class="lg-name">Other</text><text x="459" y="158" class="lg-pct" text-anchor="end">1.8%</text>
+</svg>
